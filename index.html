@@ -1,1 +1,1409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jonatas Tecnologia | Revista de Ofertas</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eef2f7;
+    color:#172033;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* TOPO */
+
+.topo{
+    background:#071522;
+    color:white;
+    padding:14px 5%;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    min-width:190px;
+}
+
+.logo-icon{
+    background:#ff5a00;
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.logo strong{
+    font-size:21px;
+    color:white;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+.busca{
+    flex:1;
+    display:flex;
+    max-width:650px;
+    margin:auto;
+}
+
+.busca input{
+    width:100%;
+    border:0;
+    padding:13px 18px;
+    border-radius:28px 0 0 28px;
+    outline:none;
+    font-size:15px;
+}
+
+.busca button{
+    border:0;
+    background:#ff5a00;
+    color:white;
+    width:55px;
+    border-radius:0 28px 28px 0;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.top-icons{
+    display:flex;
+    gap:15px;
+    font-size:13px;
+}
+
+/* MENU */
+
+.menu{
+    background:white;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:12px;
+    position:sticky;
+    top:70px;
+    z-index:900;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    overflow-x:auto;
+}
+
+.menu button{
+    border:0;
+    background:none;
+    cursor:pointer;
+    white-space:nowrap;
+    font-weight:bold;
+    color:#172033;
+}
+
+.menu button:hover{
+    color:#ff5a00;
+}
+
+/* PÁGINAS */
+
+.paginas{
+    width:95%;
+    max-width:1250px;
+    margin:20px auto;
+}
+
+.pagina{
+    display:none;
+}
+
+.pagina.ativa{
+    display:block;
+}
+
+/* BANNER */
+
+.banner{
+    min-height:300px;
+    border-radius:22px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 80% 30%,#ff8b00 0,#ff5a00 15%,transparent 38%),
+        linear-gradient(120deg,#06121e,#142b40,#ff5a00);
+    color:white;
+    padding:45px;
+    position:relative;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.banner:after{
+    content:"🛍️  📱  🎧  💻  🎮";
+    position:absolute;
+    right:35px;
+    bottom:30px;
+    font-size:65px;
+    opacity:.9;
+}
+
+.banner h1{
+    font-size:43px;
+    max-width:650px;
+    margin-bottom:15px;
+}
+
+.banner h1 span{
+    color:#ff7b00;
+}
+
+.banner p{
+    font-size:18px;
+    max-width:620px;
+    line-height:1.5;
+}
+
+.banner-btn{
+    display:inline-block;
+    margin-top:22px;
+    background:#ff5a00;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* TITULOS */
+
+.titulo{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:28px 0 15px;
+}
+
+.titulo h2{
+    font-size:27px;
+}
+
+.titulo h2:first-letter{
+    color:#ff5a00;
+}
+
+/* CATEGORIAS */
+
+.categorias{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+    margin-top:20px;
+}
+
+.cat{
+    background:white;
+    border-radius:16px;
+    padding:20px 10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.2s;
+}
+
+.cat:hover{
+    transform:translateY(-4px);
+}
+
+.cat .emoji{
+    font-size:35px;
+    display:block;
+    margin-bottom:8px;
+}
+
+.cat strong{
+    font-size:14px;
+}
+
+/* FAIXAS */
+
+.faixas{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin:20px 0;
+}
+
+.faixa{
+    padding:22px;
+    border-radius:16px;
+    color:white;
+    font-weight:bold;
+    min-height:90px;
+}
+
+.faixa:nth-child(1){
+    background:linear-gradient(135deg,#ff5a00,#ff9900);
+}
+
+.faixa:nth-child(2){
+    background:linear-gradient(135deg,#1478e8,#32a8ff);
+}
+
+.faixa:nth-child(3){
+    background:linear-gradient(135deg,#6b35d9,#a83fe8);
+}
+
+/* PRODUTOS */
+
+.produtos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.produto{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.09);
+    transition:.2s;
+    position:relative;
+}
+
+.produto:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.produto-img{
+    height:180px;
+    background:#f8fafc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+    position:relative;
+}
+
+.selo{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#ff5a00;
+    color:white;
+    padding:6px 9px;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.produto-info{
+    padding:14px;
+}
+
+.produto h3{
+    font-size:16px;
+    margin-bottom:7px;
+    min-height:38px;
+}
+
+.estrelas{
+    color:#ff8a00;
+    font-size:13px;
+}
+
+.preco{
+    color:#ef4300;
+    font-size:21px;
+    font-weight:bold;
+    margin:8px 0;
+}
+
+.antigo{
+    color:#999;
+    font-size:12px;
+    text-decoration:line-through;
+}
+
+.comprar{
+    display:block;
+    background:#ff5a00;
+    color:white;
+    text-align:center;
+    padding:11px;
+    border-radius:9px;
+    font-size:13px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.comprar:hover{
+    background:#e94700;
+}
+
+/* DESTAQUE */
+
+.destaque{
+    background:linear-gradient(135deg,#061522,#102d43);
+    color:white;
+    border-radius:18px;
+    padding:25px;
+    margin:30px 0;
+}
+
+.destaque h2{
+    color:#ff6b00;
+    margin-bottom:7px;
+}
+
+/* NAVEGAÇÃO ENTRE PÁGINAS */
+
+.navegacao{
+    margin:30px 0;
+    background:#071522;
+    color:white;
+    padding:15px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.nav-btn{
+    background:#ff5a00;
+    border:0;
+    color:white;
+    padding:11px 18px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.nav-btn:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+}
+
+.numero-pagina{
+    font-weight:bold;
+}
+
+/* SOBRE */
+
+.info{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    line-height:1.7;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.info h2{
+    color:#ff5a00;
+    margin-bottom:15px;
+}
+
+.info p{
+    margin-bottom:12px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    background:#18b957;
+    color:white;
+    padding:20px 25px;
+    border-radius:18px;
+    margin:25px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.whatsapp a{
+    background:white;
+    color:#159a49;
+    padding:12px 20px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+/* RODAPÉ */
+
+footer{
+    background:#071522;
+    color:white;
+    padding:35px 5%;
+    margin-top:35px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+footer h3{
+    color:#ff6b00;
+    margin-bottom:12px;
+}
+
+footer p,
+footer a{
+    color:#c8d0d8;
+    font-size:13px;
+    line-height:1.8;
+    display:block;
+}
+
+.social{
+    display:flex;
+    gap:8px;
+    margin-top:10px;
+}
+
+.social span{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    background:#182d3d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* BOTÃO FLUTUANTE */
+
+.float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#20c967;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    z-index:1000;
+}
+
+/* PESQUISA */
+
+.resultado{
+    display:none;
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .topo{
+        flex-wrap:wrap;
+    }
+
+    .logo{
+        min-width:auto;
+    }
+
+    .busca{
+        order:3;
+        flex-basis:100%;
+    }
+
+    .categorias{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .produtos{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .menu{
+        top:105px;
+        justify-content:flex-start;
+    }
+
+    .banner{
+        padding:25px 20px;
+        min-height:280px;
+    }
+
+    .banner h1{
+        font-size:30px;
+    }
+
+    .banner p{
+        font-size:15px;
+        max-width:90%;
+    }
+
+    .banner:after{
+        font-size:35px;
+        right:15px;
+        bottom:15px;
+    }
+
+    .categorias{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .cat{
+        padding:13px 5px;
+    }
+
+    .cat .emoji{
+        font-size:27px;
+    }
+
+    .faixas{
+        grid-template-columns:1fr;
+    }
+
+    .produtos{
+        grid-template-columns:repeat(2,1fr);
+        gap:9px;
+    }
+
+    .produto-img{
+        height:130px;
+        font-size:55px;
+    }
+
+    .produto-info{
+        padding:10px;
+    }
+
+    .produto h3{
+        font-size:14px;
+    }
+
+    .preco{
+        font-size:17px;
+    }
+
+    .comprar{
+        font-size:11px;
+        padding:9px 4px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .whatsapp{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topo">
+
+    <div class="logo">
+        <div class="logo-icon">🛍️</div>
+        <strong>Jonatas <span>Tecnologia</span></strong>
+    </div>
+
+    <div class="busca">
+        <input
+            id="campoBusca"
+            type="search"
+            placeholder="🔎 O que você está procurando?"
+            onkeyup="pesquisar()">
+        <button onclick="pesquisar()">🔍</button>
+    </div>
+
+    <div class="top-icons">
+        ❤️ Favoritos
+        🛒 Carrinho
+    </div>
+
+</header>
+
+<nav class="menu">
+
+    <button onclick="irPagina(1)">🏠 Início</button>
+    <button onclick="irPagina(2)">📱 Celulares</button>
+    <button onclick="irPagina(3)">🎧 Fones</button>
+    <button onclick="irPagina(4)">💻 Informática</button>
+    <button onclick="irPagina(5)">🏠 Casa</button>
+    <button onclick="irPagina(6)">👕 Moda</button>
+    <button onclick="irPagina(7)">📺 Eletrônicos</button>
+    <button onclick="irPagina(8)">💄 Beleza</button>
+    <button onclick="irPagina(9)">🏃 Esportes</button>
+    <button onclick="irPagina(10)">🎮 Games</button>
+    <button onclick="irPagina(11)">🔥 Ofertas</button>
+    <button onclick="irPagina(12)">📞 Contato</button>
+
+</nav>
+
+<main class="paginas">
+
+<!-- ================= PÁGINA 1 ================= -->
+
+<section class="pagina ativa" data-pagina="1">
+
+    <div class="banner">
+        <h1>
+            AS MELHORES<br>
+            <span>OFERTAS</span> EM UM SÓ LUGAR!
+        </h1>
+
+        <p>
+            Tecnologia, casa, moda, beleza, games e muito mais.
+            Uma revista de ofertas para você encontrar produtos incríveis.
+        </p>
+
+        <a href="#produtosInicio" class="banner-btn">
+            🔥 Ver ofertas
+        </a>
+    </div>
+
+    <div class="titulo">
+        <h2>📚 Revista de Ofertas</h2>
+    </div>
+
+    <div class="categorias">
+
+        <div class="cat" onclick="irPagina(2)">
+            <span class="emoji">📱</span>
+            <strong>Celulares</strong>
+        </div>
+
+        <div class="cat" onclick="irPagina(3)">
+            <span class="emoji">🎧</span>
+            <strong>Fones</strong>
+        </div>
+
+        <div class="cat" onclick="irPagina(4)">
+            <span class="emoji">💻</span>
+            <strong>Informática</strong>
+        </div>
+
+        <div class="cat" onclick="irPagina(5)">
+            <span class="emoji">🏠</span>
+            <strong>Casa</strong>
+        </div>
+
+        <div class="cat" onclick="irPagina(6)">
+            <span class="emoji">👕</span>
+            <strong>Moda</strong>
+        </div>
+
+        <div class="cat" onclick="irPagina(7)">
+            <span class="emoji">⚡</span>
+            <strong>Eletrônicos</strong>
+        </div>
+
+    </div>
+
+    <div class="faixas">
+
+        <div class="faixa">
+            🔥 ACHADINHOS DO DIA<br>
+            <small>Produtos que valem a pena!</small>
+        </div>
+
+        <div class="faixa">
+            💰 OFERTAS ATÉ R$50<br>
+            <small>Economize nas compras!</small>
+        </div>
+
+        <div class="faixa">
+            ⭐ MAIS PROCURADOS<br>
+            <small>Os favoritos do público!</small>
+        </div>
+
+    </div>
+
+    <div id="produtosInicio" class="titulo">
+        <h2>🔥 Produtos em destaque</h2>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto">
+            <div class="produto-img">
+                <span class="selo">🔥 MAIS VENDIDO</span>
+                📱
+            </div>
+            <div class="produto-info">
+                <h3>Smartphone Samsung Galaxy</h3>
+                <div class="estrelas">★★★★★ (2.389)</div>
+                <div class="preco">R$ 1.099,00</div>
+                <a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="produto-img">
+                <span class="selo">🔥 OFERTA</span>
+                🎧
+            </div>
+            <div class="produto-info">
+                <h3>Fone Bluetooth Premium</h3>
+                <div class="estrelas">★★★★★ (1.843)</div>
+                <div class="preco">R$ 129,90</div>
+                <a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="produto-img">
+                💻
+            </div>
+            <div class="produto-info">
+                <h3>Notebook para trabalho</h3>
+                <div class="estrelas">★★★★☆ (1.672)</div>
+                <div class="preco">R$ 2.199,00</div>
+                <a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="produto-img">
+                <span class="selo">⭐ DESTAQUE</span>
+                ⌚
+            </div>
+            <div class="produto-info">
+                <h3>Smartwatch inteligente</h3>
+                <div class="estrelas">★★★★★ (1.230)</div>
+                <div class="preco">R$ 149,90</div>
+                <a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 2 ================= -->
+
+<section class="pagina" data-pagina="2">
+
+    <div class="banner">
+        <h1>📱 CELULARES</h1>
+        <p>Smartphones, acessórios, películas, carregadores e muito mais.</p>
+    </div>
+
+    <div class="titulo">
+        <h2>📱 Ofertas de celulares</h2>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>Samsung Galaxy A15</h3><div class="estrelas">★★★★★</div><div class="preco">R$ 1.099</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>Xiaomi Redmi Note</h3><div class="estrelas">★★★★★</div><div class="preco">R$ 1.449</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>iPhone</h3><div class="estrelas">★★★★★</div><div class="preco">R$ 3.499</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>Motorola Moto G</h3><div class="estrelas">★★★★☆</div><div class="preco">R$ 1.399</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>Realme C Series</h3><div class="estrelas">★★★★☆</div><div class="preco">R$ 899</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>Samsung Galaxy S23</h3><div class="estrelas">★★★★★</div><div class="preco">R$ 2.799</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🔋</div><div class="produto-info"><h3>Carregador Turbo</h3><div class="estrelas">★★★★★</div><div class="preco">R$ 69,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>Capinha Premium</h3><div class="estrelas">★★★★★</div><div class="preco">R$ 29,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 3 ================= -->
+
+<section class="pagina" data-pagina="3">
+
+    <div class="banner">
+        <h1>🎧 FONES E ÁUDIO</h1>
+        <p>Som de qualidade para música, jogos e seu dia a dia.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">🎧</div><div class="produto-info"><h3>Fone Bluetooth JBL</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎧</div><div class="produto-info"><h3>AirPods Bluetooth</h3><div class="preco">R$ 199</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🔊</div><div class="produto-info"><h3>Caixa de Som JBL</h3><div class="preco">R$ 349</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎤</div><div class="produto-info"><h3>Microfone Condensador</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎧</div><div class="produto-info"><h3>Headset Gamer</h3><div class="preco">R$ 349</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎵</div><div class="produto-info"><h3>Fone sem fio</h3><div class="preco">R$ 79,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🔊</div><div class="produto-info"><h3>Caixa portátil</h3><div class="preco">R$ 99,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎧</div><div class="produto-info"><h3>Fone Gamer</h3><div class="preco">R$ 179,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 4 ================= -->
+
+<section class="pagina" data-pagina="4">
+
+    <div class="banner">
+        <h1>💻 INFORMÁTICA</h1>
+        <p>Notebooks, computadores, teclados, mouses e acessórios.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">💻</div><div class="produto-info"><h3>Notebook Acer</h3><div class="preco">R$ 2.199</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💻</div><div class="produto-info"><h3>Notebook Lenovo</h3><div class="preco">R$ 2.499</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🖥️</div><div class="produto-info"><h3>Monitor Full HD</h3><div class="preco">R$ 749</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">⌨️</div><div class="produto-info"><h3>Teclado Mecânico</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🖱️</div><div class="produto-info"><h3>Mouse Gamer</h3><div class="preco">R$ 149</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📷</div><div class="produto-info"><h3>Webcam HD</h3><div class="preco">R$ 199</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💾</div><div class="produto-info"><h3>SSD 480GB</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎮</div><div class="produto-info"><h3>Controle Gamer</h3><div class="preco">R$ 159</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 5 ================= -->
+
+<section class="pagina" data-pagina="5">
+
+    <div class="banner">
+        <h1>🏠 CASA E COZINHA</h1>
+        <p>Produtos para deixar sua casa mais prática e confortável.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">🍟</div><div class="produto-info"><h3>Air Fryer</h3><div class="preco">R$ 349</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🍳</div><div class="produto-info"><h3>Panela Elétrica</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">☕</div><div class="produto-info"><h3>Cafeteira</h3><div class="preco">R$ 199</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🧹</div><div class="produto-info"><h3>Aspirador</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🗄️</div><div class="produto-info"><h3>Organizador</h3><div class="preco">R$ 79</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🍽️</div><div class="produto-info"><h3>Jogo de panelas</h3><div class="preco">R$ 299</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💡</div><div class="produto-info"><h3>Luminária</h3><div class="preco">R$ 59</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🧺</div><div class="produto-info"><h3>Kit organizador</h3><div class="preco">R$ 89</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 6 ================= -->
+
+<section class="pagina" data-pagina="6">
+
+    <div class="banner">
+        <h1>👕 MODA</h1>
+        <p>Roupas, calçados, bolsas e acessórios.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">👕</div><div class="produto-info"><h3>Camiseta masculina</h3><div class="preco">R$ 49,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">👖</div><div class="produto-info"><h3>Calça jeans</h3><div class="preco">R$ 129</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">👟</div><div class="produto-info"><h3>Tênis casual</h3><div class="preco">R$ 199</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">👜</div><div class="produto-info"><h3>Bolsa feminina</h3><div class="preco">R$ 89,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">👗</div><div class="produto-info"><h3>Vestido feminino</h3><div class="preco">R$ 79,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🧥</div><div class="produto-info"><h3>Moletom</h3><div class="preco">R$ 119</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">⌚</div><div class="produto-info"><h3>Relógio</h3><div class="preco">R$ 149</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🧢</div><div class="produto-info"><h3>Boné</h3><div class="preco">R$ 39,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 7 ================= -->
+
+<section class="pagina" data-pagina="7">
+
+    <div class="banner">
+        <h1>⚡ ELETRÔNICOS</h1>
+        <p>Tecnologia e inovação ao seu alcance.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">📺</div><div class="produto-info"><h3>Smart TV</h3><div class="preco">R$ 1.799</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📽️</div><div class="produto-info"><h3>Projetor portátil</h3><div class="preco">R$ 499</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">⌚</div><div class="produto-info"><h3>Smartwatch</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎮</div><div class="produto-info"><h3>Console gamer</h3><div class="preco">R$ 499</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">📷</div><div class="produto-info"><h3>Câmera digital</h3><div class="preco">R$ 1.099</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🔌</div><div class="produto-info"><h3>Tomada inteligente</h3><div class="preco">R$ 59</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💡</div><div class="produto-info"><h3>Lâmpada inteligente</h3><div class="preco">R$ 39</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🔋</div><div class="produto-info"><h3>Power Bank</h3><div class="preco">R$ 99</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 8 ================= -->
+
+<section class="pagina" data-pagina="8">
+
+    <div class="banner">
+        <h1>💄 BELEZA</h1>
+        <p>Produtos de beleza, cuidados pessoais e acessórios.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">💄</div><div class="produto-info"><h3>Kit maquiagem</h3><div class="preco">R$ 119</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💇</div><div class="produto-info"><h3>Secador de cabelo</h3><div class="preco">R$ 129</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💅</div><div class="produto-info"><h3>Kit unhas</h3><div class="preco">R$ 69</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🧴</div><div class="produto-info"><h3>Kit cuidados</h3><div class="preco">R$ 89</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💆</div><div class="produto-info"><h3>Aparelho facial</h3><div class="preco">R$ 159</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🌸</div><div class="produto-info"><h3>Perfume</h3><div class="preco">R$ 199</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💇</div><div class="produto-info"><h3>Chapinha</h3><div class="preco">R$ 89</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🪞</div><div class="produto-info"><h3>Espelho LED</h3><div class="preco">R$ 129</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 9 ================= -->
+
+<section class="pagina" data-pagina="9">
+
+    <div class="banner">
+        <h1>🏃 ESPORTES E LAZER</h1>
+        <p>Produtos para treino, diversão e atividades ao ar livre.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">🏋️</div><div class="produto-info"><h3>Kit academia</h3><div class="preco">R$ 129</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🚲</div><div class="produto-info"><h3>Acessórios bicicleta</h3><div class="preco">R$ 79</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">⚽</div><div class="produto-info"><h3>Bola de futebol</h3><div class="preco">R$ 79</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🧘</div><div class="produto-info"><h3>Tapete de yoga</h3><div class="preco">R$ 59</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🏃</div><div class="produto-info"><h3>Roupas esportivas</h3><div class="preco">R$ 89</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎾</div><div class="produto-info"><h3>Kit tênis</h3><div class="preco">R$ 99</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎒</div><div class="produto-info"><h3>Mochila esportiva</h3><div class="preco">R$ 79</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">⌚</div><div class="produto-info"><h3>Relógio esportivo</h3><div class="preco">R$ 149</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 10 ================= -->
+
+<section class="pagina" data-pagina="10">
+
+    <div class="banner">
+        <h1>🎮 GAMES</h1>
+        <p>Produtos para gamers e diversão.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">🎮</div><div class="produto-info"><h3>Controle Gamer</h3><div class="preco">R$ 159</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🖱️</div><div class="produto-info"><h3>Mouse Gamer RGB</h3><div class="preco">R$ 119</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">⌨️</div><div class="produto-info"><h3>Teclado Gamer</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎧</div><div class="produto-info"><h3>Headset Gamer</h3><div class="preco">R$ 199</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🖥️</div><div class="produto-info"><h3>Monitor Gamer</h3><div class="preco">R$ 899</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💺</div><div class="produto-info"><h3>Cadeira Gamer</h3><div class="preco">R$ 649</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎙️</div><div class="produto-info"><h3>Microfone Gamer</h3><div class="preco">R$ 249</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💡</div><div class="produto-info"><h3>LED para setup</h3><div class="preco">R$ 59</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 11 ================= -->
+
+<section class="pagina" data-pagina="11">
+
+    <div class="banner">
+        <h1>🔥 OFERTAS ESPECIAIS</h1>
+        <p>Achadinhos, descontos e produtos que chamam atenção.</p>
+    </div>
+
+    <div class="produtos">
+
+        <div class="produto"><div class="produto-img">📱</div><div class="produto-info"><h3>Celular em oferta</h3><div class="preco">R$ 899</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎧</div><div class="produto-info"><h3>Fone em promoção</h3><div class="preco">R$ 39,90</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">💻</div><div class="produto-info"><h3>Notebook em oferta</h3><div class="preco">R$ 1.999</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🍟</div><div class="produto-info"><h3>Air Fryer</h3><div class="preco">R$ 299</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">⌚</div><div class="produto-info"><h3>Smartwatch</h3><div class="preco">R$ 129</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🔊</div><div class="produto-info"><h3>Caixa de som</h3><div class="preco">R$ 99</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">👟</div><div class="produto-info"><h3>Tênis em oferta</h3><div class="preco">R$ 119</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+        <div class="produto"><div class="produto-img">🎮</div><div class="produto-info"><h3>Acessório Gamer</h3><div class="preco">R$ 79</div><a class="comprar" href="https://shopee.com.br/" target="_blank">🛒 Comprar na Shopee</a></div></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PÁGINA 12 ================= -->
+
+<section class="pagina" data-pagina="12">
+
+    <div class="banner">
+        <h1>📞 FALE CONOSCO</h1>
+        <p>Encontrou alguma oferta? Precisa de ajuda? Fale com a gente.</p>
+    </div>
+
+    <div class="info">
+
+        <h2>🛍️ Sobre o Jonatas Tecnologia</h2>
+
+        <p>
+            O Jonatas Tecnologia é um site de recomendações e ofertas,
+            criado para ajudar você a encontrar produtos interessantes
+            em diferentes categorias.
+        </p>
+
+        <p>
+            Ao clicar nos produtos, você será direcionado para a Shopee
+            para realizar a compra.
+        </p>
+
+        <h2>🔗 Sobre os links de afiliado</h2>
+
+        <p>
+            Alguns links do site poderão ser links de afiliado.
+            Isso significa que o site pode receber uma comissão quando
+            uma compra elegível é realizada através de um desses links,
+            sem alterar o preço pago pelo cliente.
+        </p>
+
+        <h2>📲 Atendimento</h2>
+
+        <p>
+            Para dúvidas, sugestões ou informações sobre o site,
+            entre em contato pelo WhatsApp.
+        </p>
+
+    </div>
+
+    <div class="whatsapp">
+
+        <div>
+            <strong>💬 Fale comigo pelo WhatsApp</strong>
+            <br>
+            <small>Estou aqui para ajudar.</small>
+        </div>
+
+        <!-- COLOQUE SEU NÚMERO AQUI -->
+        <a href="https://wa.me/SEUNUMERO" target="_blank">
+            Abrir WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTROLES -->
+
+<div class="navegacao">
+
+    <button class="nav-btn" id="anterior" onclick="paginaAnterior()">
+        ← Página anterior
+    </button>
+
+    <div class="numero-pagina">
+        Página <span id="numeroAtual">1</span> de 12
+    </div>
+
+    <button class="nav-btn" id="proxima" onclick="proximaPagina()">
+        Próxima página →
+    </button>
+
+</div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>🛍️ Jonatas Tecnologia</h3>
+            <p>
+                Ofertas, achadinhos e recomendações de produtos.
+            </p>
+            <div class="social">
+                <span>💬</span>
+                <span>▶️</span>
+                <span>📷</span>
+                <span>🎵</span>
+            </div>
+        </div>
+
+        <div>
+            <h3>Revista</h3>
+            <a href="#" onclick="irPagina(1)">Início</a>
+            <a href="#" onclick="irPagina(2)">Celulares</a>
+            <a href="#" onclick="irPagina(3)">Fones</a>
+            <a href="#" onclick="irPagina(4)">Informática</a>
+        </div>
+
+        <div>
+            <h3>Categorias</h3>
+            <a href="#" onclick="irPagina(5)">Casa</a>
+            <a href="#" onclick="irPagina(6)">Moda</a>
+            <a href="#" onclick="irPagina(7)">Eletrônicos</a>
+            <a href="#" onclick="irPagina(10)">Games</a>
+        </div>
+
+        <div>
+            <h3>Informações</h3>
+            <a href="#" onclick="irPagina(12)">Contato</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Aviso de Afiliado</a>
+        </div>
+
+    </div>
+
+    <br>
+
+    <p>
+        © 2026 Jonatas Tecnologia — Revista de ofertas e recomendações.
+    </p>
+
+</footer>
+
+
+<!-- WHATSAPP FLUTUANTE -->
+
+<a
+    class="float"
+    href="https://wa.me/SEUNUMERO"
+    target="_blank">
+    💬
+</a>
+
+
+<script>
+
+/* =========================
+   CONTROLE DAS PÁGINAS
+========================= */
+
+let paginaAtual = 1;
+
+function irPagina(numero){
+
+    paginaAtual = numero;
+
+    document.querySelectorAll(".pagina").forEach(function(pagina){
+
+        pagina.classList.remove("ativa");
+
+    });
+
+    const pagina = document.querySelector(
+        '.pagina[data-pagina="' + numero + '"]'
+    );
+
+    if(pagina){
+        pagina.classList.add("ativa");
+    }
+
+    document.getElementById("numeroAtual").textContent = numero;
+
+    document.getElementById("anterior").disabled =
+        numero === 1;
+
+    document.getElementById("proxima").disabled =
+        numero === 12;
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =========================
+   PRÓXIMA PÁGINA
+========================= */
+
+function proximaPagina(){
+
+    if(paginaAtual < 12){
+        irPagina(paginaAtual + 1);
+    }
+
+}
+
+
+/* =========================
+   PÁGINA ANTERIOR
+========================= */
+
+function paginaAnterior(){
+
+    if(paginaAtual > 1){
+        irPagina(paginaAtual - 1);
+    }
+
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+function pesquisar(){
+
+    const texto =
+        document.getElementById("campoBusca")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const produtos =
+        document.querySelectorAll(".produto");
+
+    if(texto === ""){
+        produtos.forEach(function(produto){
+            produto.style.display = "";
+        });
+        return;
+    }
+
+    produtos.forEach(function(produto){
+
+        const nome =
+            produto.innerText.toLowerCase();
+
+        if(nome.includes(texto)){
+            produto.style.display = "";
+        }else{
+            produto.style.display = "none";
+        }
+
+    });
+
+}
+
+
+/* =========================
+   COMEÇA NA PÁGINA 1
+========================= */
+
+irPagina(1);
+
+</script>
+
+</body>
+</html>
 

@@ -7,91 +7,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ofertas do Jonatas</title>
 <style>
-:root{--bg:#101114;--card:#1b1d22;--orange:#ff6a00;--red:#ff3030;--white:#fff;--muted:#b8bbc4}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
-header{padding:24px 16px;text-align:center;background:linear-gradient(135deg,#171717,#3b1708);border-bottom:3px solid var(--orange)}
-.logo{font-size:29px;font-weight:900;color:var(--orange)}
-header p{color:#ddd;margin:9px 0}
-.trust{font-size:12px;color:#ffd2b3}
-main{max-width:1150px;margin:auto;padding:16px}
-.search{display:flex;gap:8px;margin:18px 0}
-input{min-width:0;flex:1;padding:14px;border-radius:10px;border:1px solid #555;background:#222;color:white;font-size:15px}
-button,.btn{border:0;border-radius:9px;background:var(--orange);color:white;font-weight:bold;padding:12px;text-decoration:none;cursor:pointer}
-.search button{padding:0 16px}
+:root{--fundo:#101114;--painel:#1c1e24;--laranja:#ff6900;--vermelho:#f33b36}
+body{margin:0;background:var(--fundo);color:#fff;font-family:Arial,sans-serif}
+header{padding:25px 15px;background:linear-gradient(120deg,#171717,#431b08);border-bottom:3px solid var(--laranja);text-align:center}
+.logo{font-size:30px;font-weight:900;color:#ff791b}
+header p{color:#ddd;margin-bottom:0}
+main{max-width:1200px;margin:auto;padding:16px}
+.search{display:flex;gap:8px;margin:20px 0}
+input{min-width:0;flex:1;background:#25272d;border:1px solid #444;color:white;padding:14px;border-radius:10px;font-size:16px}
+button,.btn{border:0;border-radius:8px;background:var(--laranja);color:white;font-weight:bold;padding:12px;cursor:pointer;text-decoration:none}
+.categories{display:flex;gap:8px;overflow-x:auto;margin-bottom:22px}
+.categories button{white-space:nowrap;background:#292b31}
 h2{font-size:22px}
-.categories{display:flex;gap:8px;overflow:auto;padding:5px 0 16px}
-.categories a{white-space:nowrap;background:#25272d;padding:10px 13px;border-radius:20px;color:white;text-decoration:none;font-size:13px}
-.categories a:hover,.btn:hover,button:hover{filter:brightness(1.15)}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.product{background:var(--card);border:1px solid #33363e;border-radius:12px;overflow:hidden;padding:10px;min-width:0}
-.product h3{font-size:15px;margin:10px 0}
-.badge{background:var(--red);padding:5px 8px;border-radius:5px;font-size:11px;display:inline-block}
-.photo-main{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:#292b31}
-.thumbs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin-top:6px}
-.thumbs img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;background:#292b31}
-.price{font-size:19px;color:#ff8b36;font-weight:bold;margin:8px 0}
-.small{font-size:12px;color:var(--muted)}
-.product .btn{display:block;text-align:center;margin-top:10px;font-size:13px}
-.pages{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:24px 0}
-.pages button{background:#292b31}
-.pages button.active{background:var(--orange)}
-.social{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}
-.social a{flex:1;min-width:125px;text-align:center;background:#292b31;color:white;text-decoration:none;padding:13px;border-radius:9px}
-.social .wa{background:#168b47}
-footer{text-align:center;background:#17181c;padding:24px 12px;color:#bbb;margin-top:25px;font-size:13px}
-footer a{color:#ff8b36}
-.note{color:#bbb;font-size:12px;line-height:1.5}
-@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.logo{font-size:36px}}
+.product{background:var(--painel);border:1px solid #34363d;border-radius:13px;padding:10px;overflow:hidden}
+.hero{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:#333}
+.photos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin-top:6px}
+.photos img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;background:#333}
+.tag{display:inline-block;background:var(--vermelho);padding:5px 8px;border-radius:5px;font-size:11px;font-weight:bold}
+.product h3{font-size:15px;line-height:1.35}
+.price{color:#ff8b3d;font-weight:bold;font-size:18px}
+.small{font-size:12px;color:#bfc0c5;line-height:1.5}
+.btn{display:block;text-align:center;margin-top:12px;font-size:13px}
+.pages{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:25px 0}
+.pages button{background:#303239}
+.pages button.active{background:var(--laranja)}
+.social{display:flex;flex-wrap:wrap;gap:9px}
+.social a{flex:1;min-width:125px;background:#292b31;color:white;text-align:center;text-decoration:none;padding:13px;border-radius:9px}
+.social .wa{background:#168d4b}
+footer{text-align:center;background:#191a1f;padding:25px 12px;margin-top:30px;color:#bbb}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.logo{font-size:38px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">👑 OFERTAS DO JONATAS</div>
-  <p>Ofertas selecionadas para você economizar!</p>
-  <div class="trust">🛍️ Ofertas Shopee • 📱 Tecnologia • 💥 Promoções</div>
+ <div class="logo">👑 OFERTAS DO JONATAS</div>
+ <p>Encontre ofertas e economize nas suas compras!</p>
+ <p class="small">🔥 Promoções • 🛍️ Shopee • 📱 Tecnologia</p>
 </header>
-
 <main>
-  <div class="search">
-    <input id="busca" placeholder="O que você está procurando?" aria-label="Pesquisar produto">
-    <button onclick="pesquisar()">Pesquisar</button>
-  </div>
-
-  <div class="categories">
-    <a href="#" onclick="filtrar('Todos');return false">🔥 Todos</a>
-    <a href="#" onclick="filtrar('Celulares');return false">📱 Celulares</a>
-    <a href="#" onclick="filtrar('Fones');return false">🎧 Fones</a>
-    <a href="#" onclick="filtrar('Informática');return false">💻 Informática</a>
-    <a href="#" onclick="filtrar('Casa');return false">🏠 Casa</a>
-    <a href="#" onclick="filtrar('Acessórios');return false">⌚ Acessórios</a>
-  </div>
-
-  <h2 id="titulo">🔥 Ofertas em destaque</h2>
-  <p class="small">Escolha um produto e toque em “Ver oferta na Shopee”.</p>
-  <div class="grid" id="produtos"></div>
-  <div class="pages" id="paginas"></div>
-
-  <h2>🌐 Nossas redes sociais</h2>
-  <p class="small">Toque para abrir a rede social normalmente. O login, se necessário, será solicitado pela própria plataforma.</p>
-  <div class="social">
-    <a href="https://www.facebook.com/" target="_blank" rel="noopener">🔵 Facebook</a>
-    <a href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
-    <a href="https://www.tiktok.com/" target="_blank" rel="noopener">🎵 TikTok</a>
-    <a href="https://www.youtube.com/" target="_blank" rel="noopener">▶️ YouTube</a>
-    <a class="wa" href="https://wa.me/5511951315202" target="_blank" rel="noopener">🟢 Falar no WhatsApp</a>
-  </div>
-  <p class="note">Os botões sociais abrem as plataformas oficiais. Depois, podemos trocar os endereços gerais pelos links dos seus perfis.</p>
+ <div class="search">
+  <input id="busca" placeholder="O que você está procurando?">
+  <button onclick="pesquisar()">Pesquisar</button>
+ </div>
+ <div class="categories">
+  <button onclick="filtrar('Todos')">🔥 Todos</button>
+  <button onclick="filtrar('Celulares')">📱 Celulares</button>
+  <button onclick="filtrar('Fones')">🎧 Fones</button>
+  <button onclick="filtrar('Informática')">💻 Informática</button>
+  <button onclick="filtrar('Casa')">🏠 Casa</button>
+  <button onclick="filtrar('Acessórios')">⌚ Acessórios</button>
+ </div>
+ <h2 id="titulo">🔥 Ofertas em destaque</h2>
+ <p class="small">Escolha uma oferta para conferir o produto na Shopee.</p>
+ <div class="grid" id="produtos"></div>
+ <div class="pages" id="paginas"></div>
+ <h2>🌐 Acesse nossas redes</h2>
+ <p class="small">Os botões abrem as plataformas oficiais. Se necessário, entre na sua conta diretamente nelas.</p>
+ <div class="social">
+  <a href="https://www.facebook.com/" target="_blank" rel="noopener">🔵 Facebook</a>
+  <a href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
+  <a href="https://www.tiktok.com/" target="_blank" rel="noopener">🎵 TikTok</a>
+  <a href="https://www.youtube.com/" target="_blank" rel="noopener">▶️ YouTube</a>
+  <a class="wa" href="https://wa.me/5511951315202" target="_blank" rel="noopener">🟢 WhatsApp</a>
+ </div>
 </main>
-
 <footer>
-  <strong>OFERTAS DO JONATAS</strong>
-  <p>Compare os produtos e confira os detalhes na loja antes de comprar.</p>
-  <p class="note">Este site pode receber comissão por compras feitas através de links de afiliado, conforme as regras do programa.</p>
+ <strong>OFERTAS DO JONATAS</strong>
+ <p>Confira preços, detalhes e condições diretamente na loja.</p>
+ <p class="small">Este site pode receber comissão por compras realizadas através de links de afiliado.</p>
 </footer>
-
 <script>
-const links = [
+const links=[
 "https://s.shopee.com.br/BURYp6DdQ",
 "https://s.shopee.com.br/60SEVZW0LZ",
 "https://s.shopee.com.br/9APGHQsPLs",
@@ -143,76 +131,49 @@ const links = [
 "https://s.shopee.com.br/5q8q2RNRAI",
 "https://s.shopee.com.br/7AeDd5vRTK"
 ];
-
-const nomes = [
-"Oferta especial de tecnologia","Acessório para celular","Fone de ouvido","Produto para informática",
-"Oferta para sua casa","Acessório moderno","Gadget em promoção","Produto de tecnologia",
-"Item útil para o dia a dia","Oferta selecionada"
+const nomes=["Celular e tecnologia","Acessório para celular","Fone de ouvido","Informática e computador","Utilidade para casa","Acessório moderno","Gadget tecnológico","Oferta de celular","Produto para o dia a dia","Acessório eletrônico"];
+const cats=["Celulares","Acessórios","Fones","Informática","Casa","Acessórios","Informática","Celulares","Casa","Fones"];
+const fotos=[
+"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=500&q=80",
+"https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=500&q=80"
 ];
-const categorias = ["Celulares","Acessórios","Fones","Informática","Casa","Acessórios","Informática","Celulares","Casa","Fones"];
-let pagina = 1;
-let filtro = "Todos";
-let termo = "";
-
-function foto(texto, n) {
-  return "https://placehold.co/300x300/25272d/ff8b36?text=" +
-    encodeURIComponent(texto + "%0AFoto " + n);
+let pagina=1,filtro="Todos",termo="";
+function dados(){return links.map((link,i)=>({link,i,nome:nomes[i%10]+" #"+(i+1),cat:cats[i%10]})).filter(p=>(filtro==="Todos"||p.cat===filtro)&&p.nome.toLowerCase().includes(termo.toLowerCase()))}
+function render(){
+ const lista=dados(),max=Math.max(1,Math.ceil(lista.length/10));
+ if(pagina>max)pagina=max;
+ const itens=lista.slice((pagina-1)*10,pagina*10);
+ document.getElementById("titulo").textContent="🔥 "+(filtro==="Todos"?"Ofertas em destaque — página "+pagina:filtro);
+ document.getElementById("produtos").innerHTML=itens.map(p=>{
+  const fotosProduto=Array.from({length:5},(_,n)=>fotos[(p.i+n)%fotos.length]);
+  return `<article class="product">
+   <span class="tag">OFERTA ${p.i+1}</span>
+   <img class="hero" src="${fotosProduto[0]}" alt="Imagem ilustrativa do produto" loading="lazy">
+   <div class="photos">${fotosProduto.map((f,n)=>`<img src="${f}" alt="Foto ilustrativa ${n+1}" loading="lazy">`).join("")}</div>
+   <h3>${p.nome}</h3><div class="small">${p.cat}</div>
+   <p class="price">Confira o preço na loja</p>
+   <div class="small">Veja disponibilidade e detalhes na Shopee.</div>
+   <a class="btn" href="${p.link}" target="_blank" rel="noopener">VER OFERTA NA SHOPEE ↗</a>
+  </article>`;
+ }).join("");
+ document.getElementById("paginas").innerHTML=Array.from({length:max},(_,i)=>`<button class="${pagina===i+1?'active':''}" onclick="ir(${i+1})">${i+1}</button>`).join("");
 }
-function listaFiltrada() {
-  return links.map((link,i)=>({
-    link, i,
-    nome: nomes[i % nomes.length] + " #" + (i+1),
-    categoria: categorias[i % categorias.length]
-  })).filter(p =>
-    (filtro==="Todos" || p.categoria===filtro) &&
-    p.nome.toLowerCase().includes(termo.toLowerCase())
-  );
-}
-function render() {
-  const todos = listaFiltrada();
-  const totalPaginas = Math.max(1,Math.ceil(todos.length/10));
-  if(pagina>totalPaginas) pagina=totalPaginas;
-  const inicio=(pagina-1)*10;
-  const itens=todos.slice(inicio,inicio+10);
-  document.getElementById("titulo").textContent =
-    filtro==="Todos" ? "🔥 Ofertas em destaque — página "+pagina : "🔥 "+filtro;
-  document.getElementById("produtos").innerHTML=itens.map(p=>{
-    const imagem= foto("Produto "+(p.i+1),1);
-    const miniaturas=[1,2,3,4,5].map(n =>
-      `<img src="${foto("Produto "+(p.i+1),n)}" alt="Imagem ilustrativa ${n} do produto ${p.i+1}" loading="lazy">`
-    ).join("");
-    return `<article class="product">
-      <span class="badge">OFERTA</span>
-      <img class="photo-main" src="${imagem}" alt="Imagem ilustrativa do produto ${p.i+1}" loading="lazy">
-      <div class="thumbs">${miniaturas}</div>
-      <h3>${p.nome}</h3>
-      <div class="small">${p.categoria} • Confira detalhes na loja</div>
-      <div class="price">Veja o preço na Shopee</div>
-      <a class="btn" href="${p.link}" target="_blank" rel="noopener">Ver oferta na Shopee ↗</a>
-    </article>`;
-  }).join("");
-  document.getElementById("paginas").innerHTML=
-    Array.from({length:totalPaginas},(_,i)=>
-      `<button class="${pagina===i+1?'active':''}" onclick="irPagina(${i+1})">${i+1}</button>`
-    ).join("");
-}
-function irPagina(n){pagina=n;render();window.scrollTo({top:0,behavior:"smooth"});}
-function filtrar(c){filtro=c;pagina=1;render();}
+function ir(n){pagina=n;render();window.scrollTo({top:0,behavior:"smooth"})}
+function filtrar(c){filtro=c;pagina=1;render()}
 function pesquisar(){
-  termo=document.getElementById("busca").value.trim();
-  pagina=1;render();
-  if(!termo){
-    alert("Digite o nome de um produto para pesquisar nas ofertas cadastradas.");
-    return;
-  }
-  if(listaFiltrada().length===0){
-    alert("Não encontrei esse nome nas ofertas cadastradas. Você pode abrir a Shopee para pesquisar outros produtos.");
-    window.open("https://shopee.com.br/","_blank","noopener");
-  }
+ termo=document.getElementById("busca").value.trim();pagina=1;render();
+ if(!termo){alert("Digite o nome do produto.");return}
+ if(!dados().length){alert("Não encontrei essa palavra nas ofertas cadastradas. Você pode pesquisar diretamente na Shopee.");window.open("https://shopee.com.br/","_blank","noopener")}
 }
-document.getElementById("busca").addEventListener("keydown",e=>{
-  if(e.key==="Enter") pesquisar();
-});
+document.getElementById("busca").addEventListener("keydown",e=>{if(e.key==="Enter")pesquisar()});
 render();
 </script>
 </body>

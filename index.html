@@ -4,176 +4,289 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ofertas do Jonatas</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>Minha Vitrine Shopee</title>
 <style>
+:root{--bg:#080808;--orange:#ff6500;--gold:#ff9c19;--white:#fff}
 *{box-sizing:border-box}
-:root{--fundo:#101114;--painel:#1c1e24;--laranja:#ff6900;--vermelho:#f33b36}
-body{margin:0;background:var(--fundo);color:#fff;font-family:Arial,sans-serif}
-header{padding:25px 15px;background:linear-gradient(120deg,#171717,#431b08);border-bottom:3px solid var(--laranja);text-align:center}
-.logo{font-size:30px;font-weight:900;color:#ff791b}
-header p{color:#ddd;margin-bottom:0}
-main{max-width:1200px;margin:auto;padding:16px}
-.search{display:flex;gap:8px;margin:20px 0}
-input{min-width:0;flex:1;background:#25272d;border:1px solid #444;color:white;padding:14px;border-radius:10px;font-size:16px}
-button,.btn{border:0;border-radius:8px;background:var(--laranja);color:white;font-weight:bold;padding:12px;cursor:pointer;text-decoration:none}
-.categories{display:flex;gap:8px;overflow-x:auto;margin-bottom:22px}
-.categories button{white-space:nowrap;background:#292b31}
-h2{font-size:22px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.product{background:var(--painel);border:1px solid #34363d;border-radius:13px;padding:10px;overflow:hidden}
-.hero{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:#333}
-.photos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin-top:6px}
-.photos img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;background:#333}
-.tag{display:inline-block;background:var(--vermelho);padding:5px 8px;border-radius:5px;font-size:11px;font-weight:bold}
-.product h3{font-size:15px;line-height:1.35}
-.price{color:#ff8b3d;font-weight:bold;font-size:18px}
-.small{font-size:12px;color:#bfc0c5;line-height:1.5}
-.btn{display:block;text-align:center;margin-top:12px;font-size:13px}
-.pages{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:25px 0}
-.pages button{background:#303239}
-.pages button.active{background:var(--laranja)}
-.social{display:flex;flex-wrap:wrap;gap:9px}
-.social a{flex:1;min-width:125px;background:#292b31;color:white;text-align:center;text-decoration:none;padding:13px;border-radius:9px}
-.social .wa{background:#168d4b}
-footer{text-align:center;background:#191a1f;padding:25px 12px;margin-top:30px;color:#bbb}
-@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.logo{font-size:38px}}
+body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+header{padding:20px 4%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:radial-gradient(ellipse at top left,#562000,transparent 50%),#080808;border-bottom:2px solid var(--orange)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-icon{font-size:48px;filter:drop-shadow(0 0 10px #ff6500)}
+.brand h1{font-size:clamp(26px,4vw,42px);font-style:italic;margin:0}
+.orange{color:var(--orange)}
+.brand h2{color:var(--orange);margin:2px 0}
+.brand p{margin:4px 0;color:#ddd}
+.contact{padding:12px;border:1px solid var(--orange);border-radius:14px;line-height:1.6;background:#111}
+.contact b{color:var(--gold)}
+nav{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;padding:10px;border-bottom:1px solid #643000}
+nav a{padding:12px 15px;border-radius:8px}
+nav a:hover{background:#321600;color:var(--gold)}
+.search{display:flex;gap:5px;padding:5px;margin:16px auto;width:95%;border:2px solid var(--orange);border-radius:15px;background:#fff}
+.search input{flex:1;min-width:0;border:0;outline:0;padding:12px;color:#222}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#ff8b00,#ff3b00);color:white;border:0;border-radius:10px;padding:12px;font-weight:bold}
+.btn:hover{filter:brightness(1.15)}
+.hero{width:95%;margin:18px auto;padding:clamp(20px,4vw,48px);border:1px solid var(--gold);border-radius:24px;background:radial-gradient(ellipse at 70% 50%,#7b2700,transparent 50%),linear-gradient(120deg,#310f00,#080808);display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:15px}
+.hero h2{font-size:clamp(36px,6vw,65px);line-height:1;margin:0}
+.hero p{font-size:18px;line-height:1.5}
+.hero-art{text-align:center;font-size:clamp(65px,12vw,125px);filter:drop-shadow(0 0 15px #ff6500)}
+.hero-points{color:#ffd4ae;font-size:14px}
+.socials{width:95%;margin:18px auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.social{display:block;text-align:center;padding:13px 5px;border:1px solid #555;border-radius:15px;background:#111;font-weight:bold}
+.social span{display:block;font-size:27px;margin-bottom:5px}
+.wa{background:linear-gradient(135deg,#00b94e,#007c36);border-color:#16e66c}
+.ig{background:linear-gradient(135deg,#ff8b25,#e600ad);border-color:#ff64bd}
+.fb{background:linear-gradient(135deg,#0784ff,#0052c9);border-color:#3999ff}
+.tt{border-color:#888}
+.section{width:95%;max-width:1450px;margin:24px auto}
+.categories{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:9px;margin-top:14px}
+.cat{background:#101010;color:white;border:1px solid var(--orange);border-radius:13px;padding:12px 4px;text-align:center}
+.cat span{display:block;font-size:27px;margin-bottom:6px}
+.cat small{font-size:12px}
+.cat.active,.cat:hover{background:#552000;box-shadow:0 0 12px #ff650044}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid #663000;padding-bottom:12px}
+.section-title h2{margin:0;font-size:clamp(24px,4vw,35px)}
+.page-tools{display:flex;align-items:center;gap:8px}
+.page-label{color:#171717;background:var(--gold);padding:9px 14px;border-radius:20px;font-weight:bold}
+.arrow,.page-number{min-width:40px;min-height:40px;background:#111;color:white;border:1px solid var(--orange);border-radius:50%}
+.arrow:hover,.page-number.active{background:var(--orange)}
+.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:16px}
+.product{min-width:0;background:white;color:#161616;border:2px solid var(--orange);border-radius:16px;padding:9px;display:flex;flex-direction:column;box-shadow:0 0 12px #ff650033}
+.photo{aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(145deg,#fafafa,#e8e8e8);border-radius:10px;font-size:65px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:contain}
+.product h3{font-size:14px;line-height:1.4;margin:9px 0;flex:1}
+.price{color:#ed4000;font-weight:bold;margin:0 0 9px}
+.buy{font-size:13px;width:100%;padding:10px 3px}
+.pages{display:flex;justify-content:center;align-items:center;gap:7px;flex-wrap:wrap;margin:22px 0}
+.page-number{padding:0 12px}
+.empty{grid-column:1/-1;text-align:center;padding:35px 12px;border:1px dashed var(--orange);border-radius:14px;color:#ddd}
+.empty strong{color:var(--gold);font-size:21px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;border:1px solid #713800;border-radius:14px;padding:18px 8px;text-align:center}
+.benefits b{display:block;color:var(--gold);font-size:26px;margin-bottom:7px}
+footer{text-align:center;margin-top:28px;padding:28px 15px;background:linear-gradient(100deg,#451600,#080808,#451600);border-top:2px solid var(--orange)}
+footer p{color:#ddd}
+footer a{color:var(--gold)}
+@media(max-width:900px){.categories{grid-template-columns:repeat(4,minmax(0,1fr))}.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){
+ header{justify-content:center;text-align:center}
+ .brand{justify-content:center}
+ .contact{width:100%}
+ .hero{grid-template-columns:1fr;text-align:center}
+ .hero-art{font-size:75px}
+ .socials{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .categories{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ .cat{padding:9px 2px}.cat span{font-size:22px}.cat small{font-size:10px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .product{padding:7px}.product h3{font-size:13px}.buy{font-size:12px}
+ .search input{padding:10px 5px;font-size:13px}
+ .search .btn{padding:10px;font-size:13px}
+ .benefits{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
-<header>
- <div class="logo">👑 OFERTAS DO JONATAS</div>
- <p>Encontre ofertas e economize nas suas compras!</p>
- <p class="small">🔥 Promoções • 🛍️ Shopee • 📱 Tecnologia</p>
+
+<header id="inicio">
+  <div class="brand">
+    <div class="brand-icon">🛍️</div>
+    <div>
+      <h1>Minha <span class="orange">Vitrine</span></h1>
+      <h2>🛒 Shopee</h2>
+      <p>Produtos que facilitam sua vida! ❤️</p>
+    </div>
+  </div>
+  <div style="text-align:center">
+    <div style="font-size:27px">🛍️ 🎁 📦</div>
+    <p>Aqui você encontra ofertas!</p>
+  </div>
+  <a class="contact" href="https://wa.me/5511951315202" target="_blank" rel="noopener">
+    💚 Fale conosco pelo WhatsApp<br><b>(11) 95131-5202</b><br>Toque aqui
+  </a>
 </header>
-<main>
- <div class="search">
-  <input id="busca" placeholder="O que você está procurando?">
-  <button onclick="pesquisar()">Pesquisar</button>
- </div>
- <div class="categories">
-  <button onclick="filtrar('Todos')">🔥 Todos</button>
-  <button onclick="filtrar('Celulares')">📱 Celulares</button>
-  <button onclick="filtrar('Fones')">🎧 Fones</button>
-  <button onclick="filtrar('Informática')">💻 Informática</button>
-  <button onclick="filtrar('Casa')">🏠 Casa</button>
-  <button onclick="filtrar('Acessórios')">⌚ Acessórios</button>
- </div>
- <h2 id="titulo">🔥 Ofertas em destaque</h2>
- <p class="small">Escolha uma oferta para conferir o produto na Shopee.</p>
- <div class="grid" id="produtos"></div>
- <div class="pages" id="paginas"></div>
- <h2>🌐 Acesse nossas redes</h2>
- <p class="small">Os botões abrem as plataformas oficiais. Se necessário, entre na sua conta diretamente nelas.</p>
- <div class="social">
-  <a href="https://www.facebook.com/" target="_blank" rel="noopener">🔵 Facebook</a>
-  <a href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
-  <a href="https://www.tiktok.com/" target="_blank" rel="noopener">🎵 TikTok</a>
-  <a href="https://www.youtube.com/" target="_blank" rel="noopener">▶️ YouTube</a>
-  <a class="wa" href="https://wa.me/5511951315202" target="_blank" rel="noopener">🟢 WhatsApp</a>
- </div>
+
+<nav>
+  <a href="#inicio">⌂ Início</a>
+  <a href="#categorias">▦ Categorias</a>
+  <a href="#sobre">ⓘ Sobre nós</a>
+  <a href="#produtos">🛒 Produtos</a>
+  <a href="#ajuda">ⓘ Ajuda</a>
+</nav>
+
+<form class="search" id="searchForm">
+  <input id="searchInput" type="search" placeholder="🔎 O que você está procurando hoje?" aria-label="Pesquisar">
+  <button class="btn" type="submit">⌕ Buscar</button>
+</form>
+
+<section class="hero">
+  <div>
+    <h2>Ofertas<br><span class="orange">Imperdíveis!</span> 🔥</h2>
+    <p>🏷️ Qualidade, praticidade e os melhores preços!</p>
+    <div class="hero-points">✓ Produtos selecionados<br>✓ Confira preços e frete na Shopee</div>
+  </div>
+  <div class="hero-art" aria-hidden="true">🛍️ 📱 🎁</div>
+</section>
+
+<section class="socials">
+  <a class="social wa" href="https://wa.me/5511951315202" target="_blank" rel="noopener"><span>💚</span>WhatsApp<small><br>Fale comigo</small></a>
+  <a class="social ig" href="https://www.instagram.com/" target="_blank" rel="noopener"><span>📸</span>Instagram<small><br>Acompanhe</small></a>
+  <a class="social fb" href="https://www.facebook.com/" target="_blank" rel="noopener"><span>🔵</span>Facebook<small><br>Curta</small></a>
+  <a class="social tt" href="https://www.tiktok.com/" target="_blank" rel="noopener"><span>🎵</span>TikTok<small><br>Siga</small></a>
+</section>
+
+<main class="section">
+  <section id="categorias">
+    <div class="section-title"><h2>🔥 Nossas <span class="orange">Categorias</span></h2></div>
+    <div class="categories">
+      <button class="cat" data-category="Eletrônicos"><span>🎧</span><small>Eletrônicos</small></button>
+      <button class="cat" data-category="Casa e Cozinha"><span>🏠</span><small>Casa e Cozinha</small></button>
+      <button class="cat" data-category="Beleza"><span>💅</span><small>Beleza</small></button>
+      <button class="cat" data-category="Moda"><span>👕</span><small>Moda</small></button>
+      <button class="cat" data-category="Esportes"><span>🏋️</span><small>Esportes</small></button>
+      <button class="cat" data-category="Brinquedos"><span>🧸</span><small>Brinquedos</small></button>
+      <button class="cat" data-category="Ferramentas"><span>🔧</span><small>Ferramentas</small></button>
+      <button class="cat active" data-category="Todas"><span>▦</span><small>Todas</small></button>
+    </div>
+  </section>
+
+  <section id="produtos" style="margin-top:24px">
+    <div class="section-title">
+      <h2>🔥 Nossos <span class="orange">Produtos</span></h2>
+      <div class="page-tools">
+        <span class="page-label" id="pageLabel">Página 1 de 20</span>
+        <button class="arrow" id="prev" aria-label="Página anterior">❮</button>
+        <button class="arrow" id="next" aria-label="Próxima página">❯</button>
+      </div>
+    </div>
+    <div class="products" id="productList"></div>
+    <div class="pages" id="pageButtons"></div>
+  </section>
+
+  <section class="benefits" id="sobre">
+    <div><b>🛡️</b>Compra pela Shopee</div>
+    <div><b>🚚</b>Consulte a entrega</div>
+    <div><b>⭐</b>Produtos selecionados</div>
+    <div><b>🎧</b>Fale conosco</div>
+  </section>
 </main>
-<footer>
- <strong>OFERTAS DO JONATAS</strong>
- <p>Confira preços, detalhes e condições diretamente na loja.</p>
- <p class="small">Este site pode receber comissão por compras realizadas através de links de afiliado.</p>
+
+<footer id="ajuda">
+  <h2>🧡 Obrigado por visitar nossa vitrine!</h2>
+  <p>Escolha seu produto e toque em “Comprar na Shopee”.</p>
+  <p>Confirme o preço, o frete e a disponibilidade na página oficial do produto.</p>
+  <a href="https://wa.me/5511951315202" target="_blank" rel="noopener">💚 Fale comigo pelo WhatsApp</a>
+  <p>© <span id="year"></span> Minha Vitrine</p>
 </footer>
+
 <script>
-const links=[
-"https://s.shopee.com.br/BURYp6DdQ",
-"https://s.shopee.com.br/60SEVZW0LZ",
-"https://s.shopee.com.br/9APGHQsPLs",
-"https://s.shopee.com.br/60SEVe3egj",
-"https://s.shopee.com.br/7ptsh2eCVt",
-"https://s.shopee.com.br/3LRTLRVdS7",
-"https://s.shopee.com.br/9fLWt6gFXm",
-"https://s.shopee.com.br/2LYw9fpHtk",
-"https://s.shopee.com.br/3LRTLXksdo",
-"https://s.shopee.com.br/6fhvJlRA3l",
-"https://s.shopee.com.br/9V26h0Stzk",
-"https://s.shopee.com.br/1B1NZtK6Z",
-"https://s.shopee.com.br/2BFVxag0Ln",
-"https://s.shopee.com.br/8Kq8OjHu5C",
-"https://s.shopee.com.br/2BFV3puwLq",
-"https://s.shopee.com.br/1LgO4LEu3D",
-"https://s.shopee.com.br/5LCWpnaqjH",
-"https://s.shopee.com.br/5VVx28DGqG",
-"https://s.shopee.com.br/8pmP0HiJSr",
-"https://s.shopee.com.br/4fwq2teB3x",
-"https://s.shopee.com.br/AUuczfPLpv",
-"https://s.shopee.com.br/4qGGFIb7Nx",
-"https://s.shopee.com.br/3g4IrD9963",
-"https://s.shopee.com.br/3B83LgLVlo",
-"https://s.shopee.com.br/9Kigh3AZ21",
-"https://s.shopee.com.br/1VzpMh3yUh",
-"https://s.shopee.com.br/2LYwMGLmoG",
-"https://s.shopee.com.br/4LJzfY9Obv",
-"https://s.shopee.com.br/2gBlgBagSr",
-"https://s.shopee.com.br/8AWiEL1P6R",
-"https://s.shopee.com.br/3LRSTV9aPG",
-"https://s.shopee.com.br/qk7UwilWc",
-"https://s.shopee.com.br/1BMxtct4rx",
-"https://s.shopee.com.br/1LgO5z0ATw",
-"https://s.shopee.com.br/8Kq9GmazGN",
-"https://s.shopee.com.br/70Klh4sHPw",
-"https://s.shopee.com.br/BURYYZ5Lb",
-"https://s.shopee.com.br/6fhvIWjGqw",
-"https://s.shopee.com.br/9fLWs4B2l4",
-"https://s.shopee.com.br/50ZhJXaG9c",
-"https://s.shopee.com.br/50ZhJ7FxoX",
-"https://s.shopee.com.br/3B838JHXHl",
-"https://s.shopee.com.br/5fpO84IX1x",
-"https://s.shopee.com.br/905q6Ds2bg",
-"https://s.shopee.com.br/AUudt1yJnN",
-"https://s.shopee.com.br/5fpOwt8TtW",
-"https://s.shopee.com.br/80DJjDPBkB",
-"https://s.shopee.com.br/60SFLiNxWr",
-"https://s.shopee.com.br/5q8q2RNRAI",
-"https://s.shopee.com.br/7AeDd5vRTK"
+const products = [
+  {name:"Kit Garrafa Térmica e Caneca GTA",url:"https://s.shopee.com.br/70Kp3PNtZL",category:"Casa e Cozinha",emoji:"🥤"},
+  {name:"Kit 10 Potes Herméticos de 850 ml",url:"https://s.shopee.com.br/qkBiGG3b9",category:"Casa e Cozinha",emoji:"🥡"},
+  {name:"Kit Manicure e Pedicure com 19 Peças",url:"https://s.shopee.com.br/9KijpyhLJ4",category:"Beleza",emoji:"💅"},
+  {name:"Mini Impressora Térmica Portátil",url:"https://s.shopee.com.br/8fT32x0tXn",category:"Eletrônicos",emoji:"🖨️"},
+  {name:"Despertador Digital com LED",url:"https://s.shopee.com.br/2VsPhn6riD",category:"Eletrônicos",emoji:"⏰"},
+  {name:"Kit com 2 Banquetas",url:"https://s.shopee.com.br/2qVG6T8JR1",category:"Casa e Cozinha",emoji:"🪑"},
+  {name:"Mini Esmerilhadeira Elétrica",url:"https://s.shopee.com.br/4fwuHuUVx0",category:"Ferramentas",emoji:"🔧"},
+  {name:"Suporte para Celular de Moto ou Bicicleta",url:"https://s.shopee.com.br/3LRWhWXuCk",category:"Eletrônicos",emoji:"📱"},
+  {name:"Relógio Feminino com Conjunto de Joias",url:"https://s.shopee.com.br/5fpRTwdOGc",category:"Moda",emoji:"⌚"},
+  {name:"Kit 3 Tapetes para Banheiro",url:"https://s.shopee.com.br/8fT33XCka1",category:"Casa e Cozinha",emoji:"🛁"}
 ];
-const nomes=["Celular e tecnologia","Acessório para celular","Fone de ouvido","Informática e computador","Utilidade para casa","Acessório moderno","Gadget tecnológico","Oferta de celular","Produto para o dia a dia","Acessório eletrônico"];
-const cats=["Celulares","Acessórios","Fones","Informática","Casa","Acessórios","Informática","Celulares","Casa","Fones"];
-const fotos=[
-"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=500&q=80",
-"https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=500&q=80"
-];
-let pagina=1,filtro="Todos",termo="";
-function dados(){return links.map((link,i)=>({link,i,nome:nomes[i%10]+" #"+(i+1),cat:cats[i%10]})).filter(p=>(filtro==="Todos"||p.cat===filtro)&&p.nome.toLowerCase().includes(termo.toLowerCase()))}
-function render(){
- const lista=dados(),max=Math.max(1,Math.ceil(lista.length/10));
- if(pagina>max)pagina=max;
- const itens=lista.slice((pagina-1)*10,pagina*10);
- document.getElementById("titulo").textContent="🔥 "+(filtro==="Todos"?"Ofertas em destaque — página "+pagina:filtro);
- document.getElementById("produtos").innerHTML=itens.map(p=>{
-  const fotosProduto=Array.from({length:5},(_,n)=>fotos[(p.i+n)%fotos.length]);
-  return `<article class="product">
-   <span class="tag">OFERTA ${p.i+1}</span>
-   <img class="hero" src="${fotosProduto[0]}" alt="Imagem ilustrativa do produto" loading="lazy">
-   <div class="photos">${fotosProduto.map((f,n)=>`<img src="${f}" alt="Foto ilustrativa ${n+1}" loading="lazy">`).join("")}</div>
-   <h3>${p.nome}</h3><div class="small">${p.cat}</div>
-   <p class="price">Confira o preço na loja</p>
-   <div class="small">Veja disponibilidade e detalhes na Shopee.</div>
-   <a class="btn" href="${p.link}" target="_blank" rel="noopener">VER OFERTA NA SHOPEE ↗</a>
-  </article>`;
- }).join("");
- document.getElementById("paginas").innerHTML=Array.from({length:max},(_,i)=>`<button class="${pagina===i+1?'active':''}" onclick="ir(${i+1})">${i+1}</button>`).join("");
+
+const PER_PAGE = 10;
+const TOTAL_PAGES = 20;
+let page = 1;
+let category = "Todas";
+let query = "";
+
+const list = document.getElementById("productList");
+const pageButtons = document.getElementById("pageButtons");
+
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
 }
-function ir(n){pagina=n;render();window.scrollTo({top:0,behavior:"smooth"})}
-function filtrar(c){filtro=c;pagina=1;render()}
-function pesquisar(){
- termo=document.getElementById("busca").value.trim();pagina=1;render();
- if(!termo){alert("Digite o nome do produto.");return}
- if(!dados().length){alert("Não encontrei essa palavra nas ofertas cadastradas. Você pode pesquisar diretamente na Shopee.");window.open("https://shopee.com.br/","_blank","noopener")}
+
+function filteredProducts() {
+  return products.filter(p =>
+    p.name.toLowerCase().includes(query) &&
+    (category === "Todas" || p.category === category)
+  );
 }
-document.getElementById("busca").addEventListener("keydown",e=>{if(e.key==="Enter")pesquisar()});
+
+function drawPages() {
+  let html = `<button class="page-number" data-page="${Math.max(1,page-1)}" aria-label="Página anterior">❮</button>`;
+  let numbers = new Set([1,2,3,4,5,page-1,page,page+1,TOTAL_PAGES]);
+  let previous = 0;
+
+  [...numbers].filter(n=>n>=1&&n<=TOTAL_PAGES).sort((a,b)=>a-b).forEach(n=>{
+    if (previous && n > previous+1) html += `<span>…</span>`;
+    html += `<button class="page-number ${n===page?"active":""}" data-page="${n}" ${n===page?'aria-current="page"':""}>${n}</button>`;
+    previous = n;
+  });
+
+  html += `<button class="page-number" data-page="${Math.min(TOTAL_PAGES,page+1)}" aria-label="Próxima página">❯</button>`;
+  pageButtons.innerHTML = html;
+  document.getElementById("pageLabel").textContent = `Página ${page} de ${TOTAL_PAGES}`;
+}
+
+function render() {
+  const all = filteredProducts();
+  const start = (page-1)*PER_PAGE;
+  const visible = all.slice(start,start+PER_PAGE);
+
+  if (page > 1 && !query && category === "Todas") {
+    list.innerHTML = `<div class="empty"><div style="font-size:48px">🛍️</div><strong>Esta página está reservada!</strong><p>Os próximos produtos serão cadastrados aqui.</p></div>`;
+  } else if (!visible.length) {
+    list.innerHTML = `<div class="empty"><strong>Nenhum produto encontrado</strong><p>Tente outro termo ou escolha “Todas”.</p></div>`;
+  } else {
+    list.innerHTML = visible.map(p=>`
+      <article class="product">
+        <div class="photo"><span aria-label="Imagem ilustrativa">${p.emoji}</span></div>
+        <h3>${escapeHTML(p.name)}</h3>
+        <p class="price">Confira o preço na Shopee</p>
+        <a class="btn buy" href="${p.url}" target="_blank" rel="noopener noreferrer">🛍️ Comprar na Shopee</a>
+      </article>
+    `).join("");
+  }
+  drawPages();
+}
+
+function changePage(n) {
+  page = Math.max(1,Math.min(TOTAL_PAGES,n));
+  render();
+  document.getElementById("produtos").scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("searchForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  query = document.getElementById("searchInput").value.trim().toLowerCase();
+  page = 1;
+  render();
+});
+document.getElementById("searchInput").addEventListener("input",e=>{
+  query = e.target.value.trim().toLowerCase();
+  page = 1;
+  render();
+});
+document.querySelectorAll(".cat").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    category = btn.dataset.category;
+    document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("active",b===btn));
+    page = 1;
+    render();
+  });
+});
+pageButtons.addEventListener("click",e=>{
+  const btn = e.target.closest("[data-page]");
+  if (btn) changePage(Number(btn.dataset.page));
+});
+document.getElementById("prev").addEventListener("click",()=>changePage(page-1));
+document.getElementById("next").addEventListener("click",()=>changePage(page+1));
+document.getElementById("year").textContent = new Date().getFullYear();
 render();
 </script>
 </body>

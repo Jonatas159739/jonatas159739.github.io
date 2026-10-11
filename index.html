@@ -1,248 +1,202 @@
 
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vitrine de Ofertas | Shopee</title>
 <meta name="theme-color" content="#080808">
+<title>Ofertas do Jonatas</title>
 <style>
-:root{--orange:#ff6500;--bg:#080808;--card:#151515}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
-a{text-decoration:none;color:inherit}
-header{padding:18px 4%;border-bottom:2px solid var(--orange);background:#050505}
-.top{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.logo{font-size:25px;font-weight:bold;color:var(--orange)}
-.logo small{display:block;color:#fff;font-size:12px;margin-top:5px}
-.search{display:flex;flex:1;max-width:430px;min-width:200px}
-.search input{width:100%;padding:13px;border-radius:10px 0 0 10px;border:1px solid var(--orange);font-size:14px}
-.search button{background:var(--orange);color:white;border:0;padding:12px 16px;border-radius:0 10px 10px 0;cursor:pointer}
-.social{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
-.social a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:76px;padding:10px 8px;border:1px solid #333;border-radius:14px;background:linear-gradient(145deg,#202020,#090909);font-size:11px;font-weight:bold;text-align:center;box-shadow:0 4px 12px #0008;transition:.25s}
-.social a:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:0 0 16px #ff650077}
-.social .ico{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;font-size:21px;color:white}
-.whatsapp .ico{background:#25D366}
-.instagram .ico{background:linear-gradient(45deg,#ffb000,#ff3040,#c135c9)}
-.facebook .ico{background:#1877F2}
-.tiktok .ico{background:linear-gradient(135deg,#25F4EE,#111,#FE2C55)}
-nav{display:flex;gap:8px;flex-wrap:wrap;padding:12px 4%;border-bottom:1px solid #783000}
-nav button,.category{background:#171717;color:#fff;border:1px solid var(--orange);padding:10px 14px;border-radius:20px;cursor:pointer}
-nav button.active,nav button:hover,.category:hover{background:var(--orange)}
-main{max-width:1250px;margin:auto;padding:18px 14px}
-.banner{border:1px solid var(--orange);border-radius:16px;padding:28px 20px;background:linear-gradient(120deg,#351300,#080808 65%,#401400);margin-bottom:22px}
-.banner h1{font-size:clamp(27px,4vw,43px);margin:0 0 10px}
-.banner h1 span{color:var(--orange)}
-.banner p{color:#ddd;line-height:1.5}
-.banner strong{color:var(--orange)}
-.categories{display:flex;gap:9px;overflow-x:auto;padding:5px 0 18px}
-h2{font-size:23px;margin:15px 0}
-h2 span{color:var(--orange)}
-.note{font-size:12px;color:#aaa}
-.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.product{background:var(--card);border:1px solid var(--orange);border-radius:12px;padding:9px;min-width:0;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.product:hover{transform:translateY(-3px);box-shadow:0 8px 20px #ff650022}
-.photo{height:155px;background:#24170e;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.photo img{width:100%;height:100%;object-fit:contain;background:#fff}
-.no-photo{font-size:48px;color:var(--orange)}
-.product h3{font-size:14px;line-height:1.4;margin:2px 0 10px;flex:1}
-.buy{display:block;text-align:center;background:var(--orange);color:#fff;border-radius:8px;padding:12px 5px;font-size:13px;font-weight:bold;margin-top:auto}
-.buy:hover{background:#ff8a00}
-.pages{display:flex;justify-content:center;gap:8px;align-items:center;flex-wrap:wrap;padding:25px 0}
-.pagebtn{background:var(--orange);color:#fff;border:0;border-radius:8px;padding:12px 14px;min-width:42px;font-weight:bold;cursor:pointer}
-.pagebtn.active{outline:2px solid white;outline-offset:2px}
-.pagebtn:disabled{background:#555;cursor:default}
-footer{border-top:1px solid var(--orange);padding:24px 12px;text-align:center;color:#ccc}
-footer strong{color:var(--orange)}
-.hidden{display:none!important}
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.photo{height:145px}}
-@media(max-width:560px){
- header{padding:14px}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
- .product{padding:7px}
- .photo{height:130px}
- .product h3{font-size:13px}
- .banner{padding:20px 15px}
- .social{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:6px}
- .social a{min-width:0;padding:9px 3px;font-size:10px}
- .social .ico{width:32px;height:32px;font-size:19px}
+:root {
+  --orange: #ff5b08;
+  --gold: #ff9b00;
+  --bg: #080808;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #241006, #080808 50%, #050505);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrap { max-width: 1400px; margin: auto; padding: 14px; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  border-bottom: 2px solid var(--orange);
+}
+h1 { font-size: clamp(28px, 5vw, 48px); margin: 0; }
+h1 span, .accent { color: var(--orange); }
+.social, .nav, .pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.social a, .nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+.social a {
+  border: 1px solid var(--orange);
+  border-radius: 10px;
+  background: #151515;
+}
+.nav { padding: 12px 0; }
+.search {
+  display: flex;
+  gap: 8px;
+  margin: 15px 0;
+}
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.btn, .buy {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(120deg, #ff9b00, #ff3d00);
+  cursor: pointer;
+}
+.hero {
+  padding: 25px;
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  background: linear-gradient(120deg, #2b1004, #080808);
+  margin-bottom: 20px;
+}
+.hero h2 { font-size: clamp(30px, 5vw, 55px); margin: 0; }
+.hero p { color: #eee; }
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 15px 0;
+}
+.category {
+  background: #15100c;
+  border: 1px solid var(--orange);
+  color: white;
+  border-radius: 10px;
+  padding: 12px 5px;
+  cursor: pointer;
+}
+.category.active { background: var(--orange); }
+.sectionhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+.product {
+  background: white;
+  color: #111;
+  border: 2px solid var(--orange);
+  border-radius: 14px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.visual {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.visual img { width: 100%; height: 100%; object-fit: contain; }
+.product h3 { font-size: 15px; flex: 1; }
+.buy { text-align: center; text-decoration: none; }
+.pages { margin: 20px 0; }
+.pages button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #151515;
+  color: white;
+  border: 1px solid var(--orange);
+}
+.pages button.active { background: var(--orange); color: black; }
+.notice { text-align: center; color: #bbb; font-size: 12px; }
+@media(max-width:900px) {
+  .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media(max-width:560px) {
+  .wrap { padding: 8px; }
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .visual { height: 115px; }
+  .product { padding: 7px; }
+  .product h3 { font-size: 13px; }
+  .categories { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
 <body>
+<div class="wrap" id="inicio">
 <header>
- <div class="top">
-  <a class="logo" href="#" onclick="location.reload();return false">
-   🛍️ Shopee
-   <small>Vitrine de Ofertas</small>
-  </a>
-
-  <form class="search" id="searchForm">
-   <input id="search" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos">
-   <button type="submit">🔍</button>
-  </form>
-
-  <div class="social">
-   <a class="whatsapp" href="https://wa.me/5511951315202" target="_blank" rel="noopener">
-    <span class="ico">☏</span>
-    <span>WhatsApp</span>
-    <span>(11) 95131-5202</span>
-   </a>
-   <a class="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">
-    <span class="ico">◎</span><span>Instagram</span>
-   </a>
-   <a class="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener">
-    <span class="ico">f</span><span>Facebook</span>
-   </a>
-   <a class="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener">
-    <span class="ico">♪</span><span>TikTok</span>
-   </a>
+  <div>
+    <h1>Ofertas <span>do Jonatas</span></h1>
+    <p>🛍️ Produtos e ofertas para você!</p>
   </div>
- </div>
+  <div class="social">
+    <a href="https://wa.me/5511951315202" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+  </div>
 </header>
-
-<nav>
- <button class="active" data-cat="Todos">🏠 Início</button>
- <button data-cat="Casa">🏡 Casa</button>
- <button data-cat="Beleza">💅 Beleza</button>
- <button data-cat="Eletrônicos">📱 Eletrônicos</button>
- <button data-cat="Ferramentas">🛠️ Ferramentas</button>
- <button data-cat="Moda">👕 Moda</button>
+<nav class="nav">
+  <a href="#inicio">Início</a>
+  <a href="#categorias">Categorias</a>
+  <a href="#produtos">Produtos</a>
 </nav>
-
-<main>
- <section class="banner">
-  <h1>Ofertas incríveis<br>em <span>um só lugar!</span></h1>
-  <p>✨ Produtos selecionados • 🛍️ Compre diretamente na Shopee</p>
-  <strong>Escolha seu produto e clique para comprar!</strong>
- </section>
-
- <div class="categories">
-  <button class="category" data-cat="Todos">Todos os produtos</button>
-  <button class="category" data-cat="Casa">Casa e decoração</button>
-  <button class="category" data-cat="Beleza">Beleza</button>
-  <button class="category" data-cat="Eletrônicos">Eletrônicos</button>
-  <button class="category" data-cat="Ferramentas">Ferramentas</button>
-  <button class="category" data-cat="Moda">Moda</button>
- </div>
-
- <h2>🔥 <span>Produtos em destaque</span></h2>
- <p id="status" class="note">Página 1 de 2</p>
- <section class="grid" id="products"></section>
-
- <div class="pages">
-  <button class="pagebtn" id="prev">← Anterior</button>
-  <button class="pagebtn active" id="p1">1</button>
-  <button class="pagebtn" id="p2">2</button>
-  <button class="pagebtn" id="next">Próxima →</button>
- </div>
-</main>
-
-<footer>
- <p class="logo">🛍️ Shopee Vitrine de Ofertas</p>
- <p>Praticidade • Economia • Ofertas</p>
- <p>Contato: <a href="https://wa.me/5511951315202"><strong>WhatsApp (11) 95131-5202</strong></a></p>
- <p class="note">Preços e disponibilidade são definidos pela Shopee.</p>
-</footer>
-
-<script>
-const produtos = [
- {n:"Kit Garrafa Térmica e Caneca GTA",l:"https://s.shopee.com.br/70Kp3PNtZL",c:"Casa",i:"🧋"},
- {n:"Kit 10 Potes Herméticos de 850 ml",l:"https://s.shopee.com.br/qkBiGG3b9",c:"Casa",i:"🥡"},
- {n:"Kit Manicure e Pedicure com 19 Peças",l:"https://s.shopee.com.br/9KijpyhLJ4",c:"Beleza",i:"💅"},
- {n:"Mini Impressora Térmica Portátil",l:"https://s.shopee.com.br/8fT32x0tXn",c:"Eletrônicos",i:"🖨️"},
- {n:"Despertador Digital com LED",l:"https://s.shopee.com.br/2VsPhn6riD",c:"Eletrônicos",i:"⏰"},
- {n:"Kit com 2 Banquetas",l:"https://s.shopee.com.br/2qVG6T8JR1",c:"Casa",i:"🪑"},
- {n:"Mini Esmerilhadeira Elétrica",l:"https://s.shopee.com.br/4fwuHuUVx0",c:"Ferramentas",i:"🛠️"},
- {n:"Suporte para Celular de Moto ou Bicicleta",l:"https://s.shopee.com.br/3LRWhWXuCk",c:"Eletrônicos",i:"📱"},
- {n:"Relógio Feminino com Conjunto de Joias",l:"https://s.shopee.com.br/5fpRTwdOGc",c:"Moda",i:"⌚"},
- {n:"Kit com 3 Tapetes para Banheiro",l:"https://s.shopee.com.br/8fT33XCka1",c:"Casa",i:"🛁"},
- {n:"Lavadora de Alta Pressão Vonder",l:"https://s.shopee.com.br/8KqClZwuyE",c:"Casa",i:"🚿"},
- {n:"Mini Limpador de Óculos",l:"https://s.shopee.com.br/70KpBQPS58",c:"Eletrônicos",i:"👓"},
- {n:"Poltrona Decorativa com Puff",l:"https://s.shopee.com.br/3qNnPi3wv4",c:"Casa",i:"🛋️"},
- {n:"Conjunto de Pratos e Xícaras",l:"https://s.shopee.com.br/3g4NDbhjYt",c:"Casa",i:"🍽️"},
- {n:"Formas de Alumínio para Bolo e Pudim",l:"https://s.shopee.com.br/1LgSRQezQc",c:"Casa",i:"🍰"},
- {n:"Short Feminino de Alfaiataria com Cinto",l:"https://s.shopee.com.br/7ptwBR5gyc",c:"Moda",i:"🩳"},
- {n:"Kit Ferramentas Elétricas 5 em 1",l:"https://s.shopee.com.br/5AtB0cDksJ",c:"Ferramentas",i:"🔧"},
- {n:"Processador Elétrico de Alimentos 3L",l:"https://s.shopee.com.br/8V9cypTueD",c:"Casa",i:"🥗"},
- {n:"Kit Ferramentas Elétricas Amarelas",l:"https://s.shopee.com.br/3Vkx299gwS",c:"Ferramentas",i:"🧰"},
- {n:"Jogo de Ferramentas com 37 Peças",l:"https://s.shopee.com.br/9zyQmDqRhu",c:"Ferramentas",i:"🔩"}
-];
-
-let pagina=1,categoria="Todos",busca="";
-const grid=document.getElementById("products");
-const status=document.getElementById("status");
-
-function render(){
- const lista=produtos.filter(p=>
-  (categoria==="Todos"||p.c===categoria)&&
-  p.n.toLocaleLowerCase("pt-BR").includes(busca.toLocaleLowerCase("pt-BR"))
- );
- const total=Math.max(1,Math.ceil(lista.length/10));
- if(pagina>total)pagina=total;
- grid.innerHTML="";
-
- lista.slice((pagina-1)*10,pagina*10).forEach(p=>{
-  const card=document.createElement("article");
-  card.className="product";
-  const photo=document.createElement("div");
-  photo.className="photo";
-  const img=document.createElement("img");
-  img.src="imagens/"+String(produtos.indexOf(p)+1).padStart(2,"0")+".jpg";
-  img.alt=p.n;
-  img.loading="lazy";
-  img.onerror=()=>{photo.innerHTML='<span class="no-photo">'+p.i+'</span>';};
-  photo.appendChild(img);
-
-  const title=document.createElement("h3");
-  title.textContent=p.n;
-  const note=document.createElement("p");
-  note.className="note";
-  note.textContent=p.c;
-  const buy=document.createElement("a");
-  buy.className="buy";
-  buy.href=p.l;
-  buy.target="_blank";
-  buy.rel="noopener sponsored";
-  buy.textContent="🛍️ Comprar na Shopee";
-
-  card.append(photo,title,note,buy);
-  grid.appendChild(card);
- });
-
- status.textContent="Página "+pagina+" de "+total+" • "+lista.length+" produtos encontrados";
- document.getElementById("p1").classList.toggle("active",pagina===1);
- document.getElementById("p2").classList.toggle("active",pagina===2);
- document.getElementById("prev").disabled=pagina===1;
- document.getElementById("next").disabled=pagina===total;
-}
-function setCategory(cat){
- categoria=cat;
- pagina=1;
- document.querySelectorAll("[data-cat]").forEach(b=>
-  b.classList.toggle("active",b.dataset.cat===cat)
- );
- render();
-}
-document.querySelectorAll("[data-cat]").forEach(b=>
- b.addEventListener("click",()=>setCategory(b.dataset.cat))
-);
-document.getElementById("searchForm").addEventListener("submit",e=>{
- e.preventDefault();
- busca=document.getElementById("search").value.trim();
- pagina=1;
- render();
-});
-document.getElementById("search").addEventListener("input",e=>{
- busca=e.target.value.trim();
- pagina=1;
- render();
-});
-document.getElementById("prev").onclick=()=>{if(pagina>1){pagina--;render()}};
-document.getElementById("next").onclick=()=>{if(pagina<2){pagina++;render()}};
-document.getElementById("p1").onclick=()=>{pagina=1;render()};
-document.getElementById("p2").onclick=()=>{pagina=2;render()};
-render();
-</script>
-</body>
-</html>
+<form class="search" id="searchForm">
+  <input id="searchInput" placeholder="🔎 Pesquise um produto..." aria-label="Pesquisar produtos">
+  <button class="btn" type="submit">Buscar</button>
+</form>
+<section class="hero">
+  <h2>Ofertas <span class="accent">Imperdíveis!</span></h2>
+  <p>Confira os produtos e clique para abrir o anúncio correto na Shopee.</p>
+</section>
+<section class="categories" id="categorias">
+  <button class="category active" data-cat="todos">Todos</button>
+  <button class="category" data-cat="casa">Casa e cozinha</button>
+  <button class="category" data-cat="beleza">Beleza</button>
+  <button class="category" data-cat="eletronicos">Eletrônicos</button>
+  <button class="category" data-cat="ferramentas">Ferramentas</button>
+  <button class="category" data-cat="moda">Moda</button>
+  <button class="category" data-cat="acessorios">Acessórios</button>
+  <button class="category" data-cat="outros">Outros</button>
+</section>
+<section id="produtos">
+  <div class="sectionhead">
+    <h2>🛒 Nossos <span class="accent">Produtos</span></h2>
+    <span id="pageBadge">Página 1 de 2</span>
+  </div>
+  <div class="products" id="productGrid"></div>
+  <div class="pages" id="pagination"></div>
+</section>

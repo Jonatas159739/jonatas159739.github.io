@@ -199,4 +199,111 @@ h1 span, .accent { color: var(--orange); }
   </div>
   <div class="products" id="productGrid"></div>
   <div class="pages" id="pagination"></div>
-</section>
+</section> 
+  
+<script>
+const products = [
+  {name:"Kit Garrafa Térmica e Caneca GTA",url:"https://s.shopee.com.br/70Kp3PNtZL",cat:"casa"},
+  {name:"Kit 10 Potes Herméticos de 850 ml",url:"https://s.shopee.com.br/qkBiGG3b9",cat:"casa"},
+  {name:"Kit Manicure e Pedicure com 19 Peças",url:"https://s.shopee.com.br/9KijpyhLJ4",cat:"beleza"},
+  {name:"Mini Impressora Térmica Portátil",url:"https://s.shopee.com.br/8fT32x0tXn",cat:"eletronicos"},
+  {name:"Despertador Digital com LED",url:"https://s.shopee.com.br/2VsPhn6riD",cat:"eletronicos"},
+  {name:"Kit com 2 Banquetas",url:"https://s.shopee.com.br/2qVG6T8JR1",cat:"casa"},
+  {name:"Mini Esmerilhadeira Elétrica",url:"https://s.shopee.com.br/4fwuHuUVx0",cat:"ferramentas"},
+  {name:"Suporte para Celular de Moto ou Bicicleta",url:"https://s.shopee.com.br/3LRWhWXuCk",cat:"acessorios"},
+  {name:"Relógio Feminino com Conjunto de Joias",url:"https://s.shopee.com.br/5fpRTwdOGc",cat:"moda"},
+  {name:"Kit 3 Tapetes para Banheiro",url:"https://s.shopee.com.br/8fT33XCka1",cat:"casa"},
+  {name:"Lavadora de Alta Pressão Vonder",url:"https://s.shopee.com.br/8KqClZwuyE",cat:"ferramentas"},
+  {name:"Mini Limpador de Óculos",url:"https://s.shopee.com.br/70KpBQPS58",cat:"acessorios"},
+  {name:"Poltrona Decorativa com Puff",url:"https://s.shopee.com.br/3qNnPi3wv4",cat:"casa"},
+  {name:"Conjunto de Pratos e Xícaras",url:"https://s.shopee.com.br/3g4NDbhjYt",cat:"casa"},
+  {name:"Formas de Alumínio para Bolo e Pudim",url:"https://s.shopee.com.br/1LgSRQezQc",cat:"casa"},
+  {name:"Short Feminino de Alfaiataria com Cinto",url:"https://s.shopee.com.br/7ptwBR5gyc",cat:"moda"},
+  {name:"Kit Ferramentas Elétricas 5 em 1 Azul e Preto",url:"https://s.shopee.com.br/5AtB0cDksJ",cat:"ferramentas"},
+  {name:"Processador Elétrico de Alimentos 3L",url:"https://s.shopee.com.br/8V9cypTueD",cat:"casa"},
+  {name:"Kit Ferramentas Elétricas Amarelas",url:"https://s.shopee.com.br/3Vkx299gwS",cat:"ferramentas"},
+  {name:"Jogo de Ferramentas com 37 Peças",url:"https://s.shopee.com.br/9zyQmDqRhu",cat:"ferramentas"}
+];
+</script>
+
+
+<script>
+const grid = document.getElementById("productGrid");
+const pagination = document.getElementById("pagination");
+const searchInput = document.getElementById("searchInput");
+const pageBadge = document.getElementById("pageBadge");
+let currentPage = 1;
+let activeCategory = "todos";
+
+function filteredProducts() {
+  const term = searchInput.value.trim().toLowerCase();
+  return products.filter(p =>
+    p.name.toLowerCase().includes(term) &&
+    (activeCategory === "todos" || p.cat === activeCategory)
+  );
+}
+
+function render() {
+  const filtered = filteredProducts();
+  const totalPages = Math.max(1, Math.ceil(filtered.length / 10));
+  if (currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage - 1) * 10;
+  const shown = filtered.slice(start, start + 10);
+
+  grid.innerHTML = shown.map(p => `
+    <article class="product">
+      <div class="visual">
+        <span style="font-size:42px">🛍️</span>
+      </div>
+      <h3>${p.name}</h3>
+      <a class="buy" href="${p.url}" target="_blank" rel="noopener">
+        Comprar na Shopee
+      </a>
+    </article>
+  `).join("");
+
+  pageBadge.textContent = `Página ${currentPage} de ${totalPages}`;
+  pagination.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.textContent = i;
+    if (i === currentPage) button.classList.add("active");
+    button.addEventListener("click", () => {
+      currentPage = i;
+      render();
+    });
+    pagination.appendChild(button);
+  }
+
+  if (!shown.length) {
+    grid.innerHTML = "<p>Nenhum produto encontrado.</p>";
+  }
+}
+
+document.getElementById("searchForm").addEventListener("submit", event => {
+  event.preventDefault();
+  currentPage = 1;
+  render();
+});
+
+searchInput.addEventListener("input", () => {
+  currentPage = 1;
+  render();
+});
+
+document.querySelectorAll(".category").forEach(button => {
+  button.addEventListener("click", () => {
+    activeCategory = button.dataset.cat;
+    currentPage = 1;
+    document.querySelectorAll(".category").forEach(b =>
+      b.classList.toggle("active", b === button)
+    );
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>

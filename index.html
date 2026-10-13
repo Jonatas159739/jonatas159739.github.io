@@ -3,483 +3,244 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<title>Achadinhos do Jonatas</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f85606">
+<title>Jonatas Achadinho</title>
 <style>
-:root {
-  --orange:#ff6a00;
-  --gold:#ffb000;
-  --black:#090909;
-  --card:#151515;
-  --white:#fff;
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f3f7;color:#281d31;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.header{padding:16px 5%;background:linear-gradient(110deg,#f85606,#ff7935);color:white;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-icon{width:48px;height:48px;border:2px solid #ffffff88;border-radius:15px 15px 15px 5px;display:grid;place-items:center;font-size:27px;background:#ffffff20}
+.brand h2{font-size:22px}
+.brand h2 span{color:#ffe6bd}
+.brand p{font-size:11px;margin-top:5px}
+.top-link{background:white;color:#f85606;padding:12px 15px;border-radius:12px;font-weight:bold;font-size:12px}
+.hero{position:relative;overflow:hidden;text-align:center;padding:55px 15px 42px;color:white;background:radial-gradient(ellipse at 10% 5%,#713a91,transparent 40%),radial-gradient(ellipse at 90% 90%,#f8560644,transparent 40%),#201126}
+.hero:before{content:"✧";position:absolute;top:20px;left:7%;font-size:55px;color:#ff85ce;animation:float 4s infinite}
+.hero:after{content:"◇";position:absolute;right:7%;bottom:20px;font-size:65px;color:#ffb37b;animation:float 4s infinite reverse}
+@keyframes float{50%{transform:translateY(-12px) rotate(12deg)}}
+.tag{display:inline-block;border:1px solid #ff7bd477;background:#ffffff0c;color:#ffc5e6;border-radius:30px;padding:10px 15px;font-size:11px;font-weight:bold;letter-spacing:1px}
+h1{font-size:clamp(36px,7vw,66px);line-height:1.06;letter-spacing:-2px;margin:23px 0 16px}
+.gradient{background:linear-gradient(90deg,#ff8a45,#ff52b4,#c09aff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{max-width:570px;margin:0 auto 24px;color:#ddd0e8;font-size:14px;line-height:1.8}
+.search{display:flex;gap:7px;max-width:690px;margin:auto;background:white;border:2px solid #ff9a68;border-radius:16px;padding:7px;position:relative;z-index:1;box-shadow:0 10px 35px #0003}
+.search input{flex:1;min-width:0;border:0;outline:0;padding:13px;color:#241b2b}
+.search button{border:0;border-radius:11px;background:#f85606;color:white;font-weight:bold;padding:12px 17px}
+.categories{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:22px}
+.categories button{border:1px solid #ffffff30;background:#ffffff0b;color:white;border-radius:12px;padding:11px 14px;font-size:12px}
+.categories button:hover{background:#f85606}
+.promo{max-width:1200px;margin:24px auto;padding:0 16px}
+.promo-inner{padding:24px;border-radius:20px;color:white;background:linear-gradient(110deg,#f85606,#ff7a32,#e94287);display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.promo h2{font-size:22px;margin-bottom:7px}
+.promo p{font-size:13px;color:#fff0e7}
+.promo a{background:white;color:#e84d05;padding:13px 15px;border-radius:11px;font-size:12px;font-weight:bold}
+.catalog{max-width:1200px;margin:auto;padding:12px 16px 50px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.section-head h2{font-size:clamp(24px,4vw,32px)}
+.section-head p{font-size:12px;color:#827788;margin-top:7px}
+.count{font-size:11px;font-weight:bold;color:#f85606;background:#fff0e7;padding:10px;border-radius:20px}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.product{min-width:0;background:white;border:1px solid #eee7f0;border-radius:17px;padding:9px;transition:.25s;overflow:hidden}
+.product:hover{transform:translateY(-5px);border-color:#ffb28d;box-shadow:0 12px 28px #35164415}
+.photo-wrap{position:relative;aspect-ratio:1;background:#eee7f3;border-radius:12px;overflow:hidden}
+.photo{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+.product:hover .photo{transform:scale(1.05)}
+.number{position:absolute;top:9px;left:9px;background:#f85606;color:white;padding:7px 9px;border-radius:8px;font-size:10px;font-weight:bold}
+.product h3{font-size:13px;line-height:1.5;margin:12px 2px 7px;min-height:38px}
+.product p{font-size:10px;color:#877c8e;line-height:1.6;min-height:32px;margin:0 2px 12px}
+.buy{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(110deg,#f85606,#ff762a);color:white;padding:13px 5px;border-radius:11px;font-size:11px;font-weight:bold}
+.buy:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.note{text-align:center;font-size:10px;color:#9b8fa1;margin-top:8px;overflow-wrap:anywhere}
+.footer{position:relative;overflow:hidden;text-align:center;padding:42px 18px 30px;background:radial-gradient(ellipse at 0 100%,#923cff35,transparent 40%),#201126;color:white}
+.footer h2{font-size:29px;margin-bottom:10px}
+.footer>p{font-size:12px;color:#d3c5df;line-height:1.8}
+.socials{display:flex;justify-content:center;align-items:stretch;flex-wrap:wrap;gap:13px;margin:26px auto;max-width:850px}
+.social-btn{display:flex;align-items:center;justify-content:center;gap:10px;min-width:145px;padding:14px 18px;border:1px solid #ffffff35;border-radius:14px;color:white;font-weight:bold;font-size:12px;transition:transform .25s,box-shadow .25s;box-shadow:0 6px 18px #0002}
+.social-btn:hover{transform:translateY(-5px);box-shadow:0 12px 25px #0004}
+.social-btn svg{width:23px;height:23px;flex-shrink:0}
+.whatsapp{background:linear-gradient(135deg,#20c86b,#079447);border-color:#5dffad}
+.instagram{background:linear-gradient(135deg,#7c36d6,#ed287b,#ff9c38);border-color:#ff9ac9}
+.tiktok{background:linear-gradient(135deg,#111,#30303a);border-color:#ff5c9d}
+.facebook{background:linear-gradient(135deg,#1877f2,#0752bc);border-color:#6cb0ff}
+.social-sub{font-size:10px;color:#c7b5d5;margin-top:-10px!important}
+.disclaimer{max-width:700px;margin:20px auto 0!important;font-size:10px!important;color:#b9a8c5!important}
+@media(max-width:850px){.products{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}}
+@media(max-width:560px){
+ .header{padding:13px}.brand h2{font-size:19px}.brand-icon{width:42px;height:42px}
+ .hero{padding:42px 12px 32px}h1{letter-spacing:-1px}
+ .search{gap:3px;padding:5px}.search input{font-size:12px;padding:12px 6px}
+ .search button{font-size:11px;padding:12px 9px}
+ .categories button{padding:10px 11px;font-size:11px}
+ .promo{padding:0 11px}.promo-inner{padding:19px}.promo h2{font-size:19px}
+ .catalog{padding:10px 10px 35px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .product{padding:7px;border-radius:14px}.product h3{font-size:12px}
+ .buy{font-size:10px}.social-btn{flex:1 1 42%;min-width:0;padding:13px 8px}
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  color:var(--white);
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(ellipse at 10% 10%,#381400 0,transparent 35%),
-    radial-gradient(ellipse at 90% 35%,#241000 0,transparent 35%),
-    #090909;
-  overflow-x:hidden;
-}
-a { color:inherit; text-decoration:none; }
-button,input { font:inherit; }
-header {
-  padding:24px 16px 34px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  border-bottom:1px solid #ff6a0044;
-}
-header:before,header:after {
-  content:"✦  ✧  🛍️  ✧  ✦";
-  position:absolute;
-  color:#ff8c00;
-  opacity:.55;
-  font-size:24px;
-  animation:float 5s ease-in-out infinite;
-}
-header:before { top:25px;left:-5px;transform:rotate(-15deg); }
-header:after { right:-5px;bottom:25px;animation-delay:1s; }
-.logo {
-  display:inline-block;
-  padding:9px 17px;
-  border:1px solid #ff6a00;
-  border-radius:30px;
-  color:#ffb000;
-  letter-spacing:3px;
-  font-size:11px;
-  box-shadow:0 0 20px #ff6a0033;
-}
-h1 {
-  margin:20px 0 8px;
-  font-size:clamp(32px,8vw,58px);
-  line-height:1.06;
-  font-weight:1000;
-  text-transform:uppercase;
-  background:linear-gradient(100deg,#fff 5%,#ffb000 45%,#ff5e00 80%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  filter:drop-shadow(0 0 15px #ff6a0033);
-}
-.subtitle { color:#d5d5d5;font-size:14px; }
-.sparkles { margin:17px 0;font-size:23px;letter-spacing:10px; }
-.pill {
-  display:inline-block;
-  padding:10px 18px;
-  border-radius:30px;
-  background:linear-gradient(100deg,#ff6a00,#ffad00);
-  color:#111;
-  font-size:12px;
-  font-weight:900;
-  box-shadow:0 0 25px #ff6a0040;
-}
-nav {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-  padding:16px 10px;
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:#090909ed;
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #ff6a0033;
-}
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  padding:12px 16px;
-  border-radius:14px;
-  font-size:12px;
-  font-weight:900;
-  border:1px solid #ff6a00;
-  color:#fff;
-  background:linear-gradient(135deg,#292018,#111);
-  cursor:pointer;
-  transition:transform .2s,box-shadow .2s;
-}
-.btn:hover {
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 0 22px #ff6a0077;
-}
-.btn.primary {
-  color:#111;
-  background:linear-gradient(110deg,#ff6200,#ffb000);
-  border:0;
-}
-.btn.whatsapp {
-  background:linear-gradient(110deg,#087b45,#19c76b);
-  color:white;
-  border:0;
-}
-main { max-width:1150px;margin:auto;padding:24px 14px; }
-.section-title {
-  text-align:center;
-  font-size:25px;
-  margin:12px 0 8px;
-}
-.section-title span { color:var(--orange); }
-.intro {
-  text-align:center;
-  color:#aaa;
-  font-size:13px;
-  margin:0 0 22px;
-}
-.searchbox {
-  padding:18px;
-  background:linear-gradient(145deg,#1b1713,#101010);
-  border:1px solid #ff6a0066;
-  border-radius:22px;
-  box-shadow:0 0 30px #ff6a0018;
-  margin-bottom:30px;
-}
-.searchbox label {
-  display:block;
-  font-weight:900;
-  margin-bottom:12px;
-  color:#ffb000;
-}
-.searchrow { display:flex;gap:9px; }
-.searchrow input {
-  width:100%;
-  min-width:0;
-  padding:15px;
-  border-radius:13px;
-  border:1px solid #444;
-  outline:none;
-  color:white;
-  background:#090909;
-}
-.searchrow input:focus {
-  border-color:#ff6a00;
-  box-shadow:0 0 12px #ff6a0033;
-}
-.searchrow button { white-space:nowrap; }
-.hint { color:#999;font-size:11px;margin:11px 0 0; }
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;
-}
-.product {
-  position:relative;
-  min-width:0;
-  padding:13px;
-  overflow:hidden;
-  border-radius:19px;
-  background:linear-gradient(145deg,#1b1b1b,#101010);
-  border:1px solid #ffffff12;
-  box-shadow:0 8px 22px #0007;
-  animation:appear .6s both;
-  transition:transform .25s,border-color .25s;
-}
-.product:before {
-  content:"";
-  position:absolute;
-  width:100px;height:100px;
-  border-radius:50%;
-  right:-50px;top:-50px;
-  background:#ff6a0017;
-  filter:blur(5px);
-}
-.product:hover {
-  transform:translateY(-5px);
-  border-color:#ff6a00aa;
-}
-.art {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:105px;
-  margin-bottom:12px;
-  border-radius:15px;
-  background:
-    radial-gradient(circle,#ff6a0025,transparent 65%),
-    #0b0b0b;
-  border:1px solid #ff6a0027;
-  font-size:52px;
-  position:relative;
-}
-.tag {
-  position:absolute;
-  top:9px;left:9px;
-  background:#ff6a00;
-  color:#111;
-  border-radius:7px;
-  padding:5px 7px;
-  font-size:9px;
-  font-weight:1000;
-}
-.product h3 {
-  font-size:13px;
-  line-height:1.45;
-  margin:8px 0 14px;
-  min-height:38px;
-}
-.product .buy {
-  width:100%;
-  padding:11px 5px;
-  border-radius:11px;
-  display:block;
-  text-align:center;
-  font-size:11px;
-  font-weight:1000;
-  color:#111;
-  background:linear-gradient(100deg,#ff6500,#ffb000);
-  box-shadow:0 4px 15px #ff6a0022;
-}
-.product .buy:hover { filter:brightness(1.13); }
-.bottom-banner {
-  margin:32px 0 20px;
-  padding:24px 16px;
-  text-align:center;
-  border:1px solid #ff6a0055;
-  border-radius:22px;
-  background:linear-gradient(130deg,#251207,#111);
-}
-.bottom-banner p { color:#ccc;font-size:13px;line-height:1.7; }
-.socials {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-footer {
-  padding:25px 15px;
-  text-align:center;
-  border-top:1px solid #ff6a0033;
-  color:#999;
-  font-size:12px;
-}
-footer strong { color:#ff8c00; }
-.float {
-  position:fixed;
-  right:14px;
-  bottom:16px;
-  z-index:20;
-  border-radius:50px;
-  box-shadow:0 0 24px #12b96555;
-}
-@keyframes float {
-  0%,100% { translate:0 0; }
-  50% { translate:0 -9px; }
-}
-@keyframes appear {
-  from { opacity:0;transform:translateY(15px); }
-  to { opacity:1;transform:translateY(0); }
-}
-@media(min-width:600px) {
-  .grid { grid-template-columns:repeat(3,minmax(0,1fr));gap:17px; }
-  .product { padding:16px; }
-  .art { height:145px;font-size:65px; }
-  .product h3 { font-size:14px; }
-}
-@media(min-width:900px) {
-  .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
-  main { padding:30px 22px; }
-}
-@media(max-width:370px) {
-  .searchrow { flex-direction:column; }
-  .grid { gap:9px; }
-  .product { padding:9px; }
-  .art { height:85px;font-size:42px; }
-}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">✦ OFERTAS SELECIONADAS ✦</div>
-  <h1>Achadinhos<br>do Jonatas</h1>
-  <p class="subtitle">✨ Seu próximo achado está aqui! ✨</p>
-  <div class="sparkles">✦ 🛍️ ✧ 🔥 ✧ 🛍️ ✦</div>
-  <span class="pill">💥 CONFIRA OS ACHADINHOS 💥</span>
+<header class="header">
+  <a class="brand" href="#">
+    <span class="brand-icon">J</span>
+    <span>
+      <h2>Jonatas <span>Achadinho</span></h2>
+      <p>Ofertas que valem a pena!</p>
+    </span>
+  </a>
+  <a class="top-link" href="https://shopee.com.br/" target="_blank" rel="noopener">EXPLORAR SHOPEE ↗</a>
 </header>
 
-<nav>
-  <a class="btn" href="#produtos">🛍️ Produtos</a>
-  <a class="btn" href="#pesquisa">🔎 Pesquisar</a>
-  <a class="btn whatsapp" href="https://wa.me/5511951315202" target="_blank" rel="noopener">💬 WhatsApp</a>
-</nav>
+<section class="hero">
+  <span class="tag">✦ SUA VITRINE DE ACHADINHOS ✦</span>
+  <h1>Descubra ofertas<br><span class="gradient">incríveis!</span></h1>
+  <p>Explore novidades, encontre seus favoritos e descubra produtos para o seu dia a dia.</p>
 
-<main>
-  <section id="pesquisa" class="searchbox">
-    <label for="search">🔎 PROCURE QUALQUER PRODUTO NA SHOPEE</label>
-    <form class="searchrow" id="searchForm">
-      <input id="search" type="search" placeholder="Ex.: fone Bluetooth, tênis, perfume..." required>
-      <button class="btn primary" type="submit">🔍 BUSCAR</button>
-    </form>
-    <p class="hint">Digite o nome do que procura e toque em BUSCAR para abrir os resultados da Shopee.</p>
-  </section>
+  <form class="search" id="searchForm">
+    <input id="searchInput" type="search" placeholder="O que você procura na Shopee?" required aria-label="Pesquisar produtos">
+    <button type="submit">⌕ PESQUISAR</button>
+  </form>
 
-  <section id="produtos">
-    <h2 class="section-title">🔥 Achadinhos <span>em destaque</span></h2>
-    <p class="intro">Escolha seu produto e confira na Shopee!</p>
+  <div class="categories">
+    <button type="button" data-search="eletrônicos">Eletrônicos</button>
+    <button type="button" data-search="roupas e moda">Moda</button>
+    <button type="button" data-search="beleza">Beleza</button>
+    <button type="button" data-search="casa e decoração">Casa</button>
+    <button type="button" data-search="esportes">Esportes</button>
+    <button type="button" data-search="bolsas e acessórios">Acessórios</button>
+    <button type="button" data-search="brinquedos">Brinquedos</button>
+  </div>
+</section>
 
-    <div class="grid">
-      <article class="product">
-        <div class="art"><span class="tag">01</span>🥤</div>
-        <h3>Kit Garrafa Térmica e Caneca GTA</h3>
-        <a class="buy" href="https://s.shopee.com.br/70Kp3PNtZL" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">02</span>🫙</div>
-        <h3>Kit com 10 Potes Herméticos de 850 ml</h3>
-        <a class="buy" href="https://s.shopee.com.br/qkBiGG3b9" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">03</span>💅</div>
-        <h3>Kit Manicure e Pedicure com 19 Peças</h3>
-        <a class="buy" href="https://s.shopee.com.br/9KijpyhLJ4" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">04</span>🖨️</div>
-        <h3>Mini Impressora Térmica Bluetooth</h3>
-        <a class="buy" href="https://s.shopee.com.br/8fT32x0tXn" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">05</span>⏰</div>
-        <h3>Despertador Digital com LED</h3>
-        <a class="buy" href="https://s.shopee.com.br/2VsPhn6riD" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">06</span>🪑</div>
-        <h3>Kit com 2 Banquetas</h3>
-        <a class="buy" href="https://s.shopee.com.br/2qVG6T8JR1" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">07</span>🛠️</div>
-        <h3>Mini Esmerilhadeira Elétrica</h3>
-        <a class="buy" href="https://s.shopee.com.br/4fwuHuUVx0" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">08</span>🏍️</div>
-        <h3>Suporte para Celular de Moto ou Bicicleta</h3>
-        <a class="buy" href="https://s.shopee.com.br/3LRWhWXuCk" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">09</span>⌚</div>
-        <h3>Relógio Feminino com Conjunto de Joias</h3>
-        <a class="buy" href="https://s.shopee.com.br/5fpRTwdOGc" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">10</span>🛁</div>
-        <h3>Kit com 3 Tapetes para Banheiro</h3>
-        <a class="buy" href="https://s.shopee.com.br/8fT33XCka1" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">11</span>💦</div>
-        <h3>Lavadora de Alta Pressão Vonder</h3>
-        <a class="buy" href="https://s.shopee.com.br/8KqClZwuyE" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">12</span>👓</div>
-        <h3>Mini Limpador de Óculos</h3>
-        <a class="buy" href="https://s.shopee.com.br/70KpBQPS58" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">13</span>🛋️</div>
-        <h3>Poltrona Decorativa com Puff</h3>
-        <a class="buy" href="https://s.shopee.com.br/3qNnPi3wv4" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">14</span>🍽️</div>
-        <h3>Conjunto de Pratos e Xícaras</h3>
-        <a class="buy" href="https://s.shopee.com.br/3g4NDbhjYt" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">15</span>🧁</div>
-        <h3>Formas de Alumínio para Bolo e Pudim</h3>
-        <a class="buy" href="https://s.shopee.com.br/1LgSRQezQc" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">16</span>👗</div>
-        <h3>Short Feminino de Alfaiataria com Cinto</h3>
-        <a class="buy" href="https://s.shopee.com.br/7ptwBR5gyc" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">17</span>🔧</div>
-        <h3>Kit Ferramentas Elétricas 5 em 1</h3>
-        <a class="buy" href="https://s.shopee.com.br/5AtB0cDksJ" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">18</span>🥕</div>
-        <h3>Processador Elétrico de Alimentos 3 Litros</h3>
-        <a class="buy" href="https://s.shopee.com.br/8V9cypTueD" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">19</span>🧰</div>
-        <h3>Kit de Ferramentas Elétricas Amarelas</h3>
-        <a class="buy" href="https://s.shopee.com.br/3Vkx299gwS" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
-      <article class="product">
-        <div class="art"><span class="tag">20</span>🔩</div>
-        <h3>Jogo de Ferramentas com 37 Peças</h3>
-        <a class="buy" href="https://s.shopee.com.br/9zyQmDqRhu" target="_blank" rel="noopener">🛒 VER NA SHOPEE ↗</a>
-      </article>
+<section class="promo">
+  <div class="promo-inner">
+    <div>
+      <h2>Achadinhos para você!</h2>
+      <p>Encontre novidades e confira cada anúncio.</p>
     </div>
-  </section>
+    <a href="https://shopee.com.br/" target="_blank" rel="noopener">VER NA SHOPEE ↗</a>
+  </div>
+</section>
 
-  <section class="bottom-banner">
-    <div class="sparkles">🧡 ✨ 🛍️ ✨ 🧡</div>
-    <h2>Gostou dos achadinhos?</h2>
-    <p>Confira os produtos na Shopee e compartilhe a página com quem também gosta de boas descobertas!</p>
-    <div class="socials">
-      <a class="btn whatsapp" href="https://wa.me/5511951315202" target="_blank" rel="noopener">💬 FALAR NO WHATSAPP</a>
-      <button class="btn primary" type="button" id="shareBtn">📲 COMPARTILHAR SITE</button>
-      <a class="btn" href="#pesquisa">🔎 BUSCAR PRODUTOS</a>
+<main class="catalog">
+  <div class="section-head">
+    <div>
+      <h2>Produtos em destaque</h2>
+      <p>Escolha um produto para abrir seu anúncio.</p>
     </div>
-  </section>
+    <span class="count" id="count">20 PRODUTOS</span>
+  </div>
+  <div class="products" id="products"></div>
 </main>
 
-<a class="btn whatsapp float" href="https://wa.me/5511951315202" target="_blank" rel="noopener">💬 WhatsApp</a>
+<footer class="footer">
+  <h2>Jonatas Achadinho</h2>
+  <p>Conecte-se comigo e acompanhe as novidades!</p>
 
-<footer>
-  <div class="sparkles">✦ ✧ 🛍️ ✧ ✦</div>
-  <strong>ACHADINHOS DO JONATAS</strong>
-  <p>Ofertas e descobertas para você! 🧡</p>
-  <p>Preços e disponibilidade podem mudar na Shopee.</p>
+  <div class="socials">
+    <a class="social-btn whatsapp" href="https://wa.me/5511951315202" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/>
+        <path d="M9 8.5c.5 2 2 3.5 4.5 4.5l1.5-1.5 2 1c-.2 2-1.5 2.5-3 2.2-3.5-.8-6.5-3.8-7-6.5-.2-1.2.7-2 2-2.2Z"/>
+      </svg>
+      WhatsApp
+    </a>
+
+    <!-- Troque os links abaixo pelos endereços dos seus perfis pessoais. -->
+    <a class="social-btn instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/>
+      </svg>
+      Instagram
+    </a>
+
+    <a class="social-btn tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 3v12a4 4 0 1 1-4-4"/>
+        <path d="M14 3c1 3 3 5 6 5"/>
+      </svg>
+      TikTok
+    </a>
+
+    <a class="social-btn facebook" href="https://www.facebook.com/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.5V10H7v3h2.9v8h3.6Z"/>
+      </svg>
+      Facebook
+    </a>
+  </div>
+
+  <p class="social-sub">Botões com efeitos modernos e acesso direto às redes.</p>
+  <p class="disclaimer">
+    Vitrine independente. Fotos ilustrativas; confira os detalhes no anúncio.
+    Alguns links podem gerar comissão de afiliado.
+  </p>
 </footer>
 
 <script>
-document.getElementById("searchForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const term = document.getElementById("search").value.trim();
-  if (!term) return;
-  const url = "https://shopee.com.br/search?keyword=" + encodeURIComponent(term);
-  window.open(url, "_blank", "noopener");
+const products=[
+{id:"70Kp3PNtZL",name:"Smartwatch e relógios",img:"photo-1523275335684-37898b6baf30"},
+{id:"qkBiGG3b9",name:"Fones sem fio",img:"photo-1606220945770-b5b6c2c55bf1"},
+{id:"9KijpyhLJ4",name:"Câmeras e acessórios",img:"photo-1516035069371-29a1b244cc32"},
+{id:"8fT32x0tXn",name:"Acessórios de cozinha",img:"photo-1585515320310-259814833e62"},
+{id:"2VsPhn6riD",name:"Áudio e eletrônicos",img:"photo-1505740420928-5e560c06d30e"},
+{id:"2qVG6T8JR1",name:"Relógios e acessórios",img:"photo-1524805444758-089113d48a6d"},
+{id:"4fwuHuUVx0",name:"Tênis e calçados",img:"photo-1542291026-7eec264c27ff"},
+{id:"3LRWhWXuCk",name:"Mochilas e bolsas",img:"photo-1553062407-98eeb64c6a62"},
+{id:"5fpRTwdOGc",name:"Maquiagem e beleza",img:"photo-1522335789203-aabd1fc54bc9"},
+{id:"8fT33XCka1",name:"Casa e decoração",img:"photo-1631049307264-da0ec9d70304"},
+{id:"8KqClZwuyE",name:"Celulares e tecnologia",img:"photo-1511707171634-5f897ff02aa9"},
+{id:"70KpBQPS58",name:"Camisetas e moda",img:"photo-1521572163474-6864f9cf17ab"},
+{id:"3qNnPi3wv4",name:"Iluminação decorativa",img:"photo-1507473885765-e6ed057f782c"},
+{id:"3g4NDbhjYt",name:"Moda e acessórios",img:"photo-1529139574466-a303027c1d8b"},
+{id:"1LgSRQezQc",name:"Bolsas e acessórios",img:"photo-1584917865442-de89df76afd3"},
+{id:"7ptwBR5gyc",name:"Games e controles",img:"photo-1592840496694-26d035b52b48"},
+{id:"5AtB0cDksJ",name:"Lâmpadas e iluminação",img:"photo-1507473885765-e6ed057f782c"},
+{id:"8V9cypTueD",name:"Óculos e acessórios",img:"photo-1511499767150-a48a237f0083"},
+{id:"3Vkx299gwS",name:"Caixas de som",img:"photo-1608043152269-423dbba4e7e1"},
+{id:"9zyQmDqRhu",name:"Pulseiras e relógios",img:"photo-1508685096489-7aacd43bd3b1"}
+];
+
+document.getElementById("products").innerHTML=products.map((p,i)=>`
+<article class="product">
+  <div class="photo-wrap">
+    <span class="number">${String(i+1).padStart(2,"0")}</span>
+    <img class="photo"
+      src="https://images.unsplash.com/${p.img}?auto=format&fit=crop&w=600&q=85"
+      alt="${p.name} — foto ilustrativa"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/600x600/eee5f2/594567?text=Foto+ilustrativa'">
+  </div>
+  <h3>${p.name}</h3>
+  <p>Confira fotos, características, preço e disponibilidade no anúncio.</p>
+  <a class="buy" href="https://s.shopee.com.br/${p.id}" target="_blank" rel="noopener noreferrer">
+    VER NA SHOPEE ↗
+  </a>
+  <div class="note">Produto ${i+1} · Link individual</div>
+</article>`).join("");
+
+document.getElementById("count").textContent=products.length+" PRODUTOS";
+
+function searchShopee(term){
+  term=term.trim();
+  if(!term)return;
+  window.open("https://shopee.com.br/search?keyword="+encodeURIComponent(term),"_blank","noopener,noreferrer");
+}
+
+document.getElementById("searchForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  searchShopee(document.getElementById("searchInput").value);
 });
 
-document.getElementById("shareBtn").addEventListener("click", async function() {
-  const data = {
-    title: "Achadinhos do Jonatas",
-    text: "Confira os achadinhos!",
-    url: window.location.href
-  };
-  try {
-    if (navigator.share) {
-      await navigator.share(data);
-    } else if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(window.location.href);
-      alert("Link do site copiado!");
-    } else {
-      prompt("Copie o endereço do site:", window.location.href);
-    }
-  } catch (error) {
-    if (error.name !== "AbortError") {
-      prompt("Copie o endereço do site:", window.location.href);
-    }
-  }
+document.querySelectorAll("[data-search]").forEach(button=>{
+  button.addEventListener("click",()=>searchShopee(button.dataset.search));
 });
 </script>
 </body>
